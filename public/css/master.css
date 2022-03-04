@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+* {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+html::-webkit-scrollbar {
+  width: 8px;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #424A52;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  color: #424A52;
+  background-color: #F5F5F5;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* =>> adaptation */
+
+
+/* desktop */
+
+@media screen and (max-width: 1399px) {
+  .container {
+    max-width: 1060px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .container {
+    max-width: 852px;
+  }
+}
+
+
+/* tablet */
+
+@media screen and (max-width: 991px) {
+  .container {
+    max-width: 698px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    max-width: 506px;
+  }
+}
+
+
+/* mobile */
+
+@media screen and (max-width: 575px) {
+  .container {
+    max-width: 360px;
+  }
+}
+
+@media screen and (max-width: 389px) {
+  .container {
+    max-width: 90%;
+  }
+}
+
+
+/* <<= adaptation */
