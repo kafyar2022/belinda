@@ -1,0 +1,251 @@
+  .header {
+    font-size: 16px;
+    font-weight: 300;
+    display: flex;
+    margin-top: 96px;
+    margin-bottom: 32px;
+    height: 60px;
+  }
+
+  .main-navigation {
+    display: flex;
+    width: calc(50% - 16px);
+    height: 100%;
+    margin-right: 32px;
+    transition: 0.3s;
+  }
+
+  .header.menu--shown .main-navigation {
+    width: calc(75% - 16px);
+  }
+
+  .main-navigation>a:first-child {
+    display: flex;
+    width: 160px;
+    min-width: 160px;
+    max-height: 100%;
+    align-self: center;
+    margin-right: 48px;
+  }
+
+  .main-logo {
+    display: block;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .menu {
+    display: flex;
+    margin: 0;
+    padding-right: 24px;
+    padding-left: 24px;
+    background-color: #fff;
+    border-radius: 16px;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+  }
+
+  .header.menu--shown .menu {
+    flex-grow: 1;
+  }
+
+  .menu>dt {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu>dt::after {
+    content: "";
+    margin-left: 0;
+    width: 0;
+    height: 10px;
+    background-image: url("../img/arrow-right.svg");
+    background-position: right center;
+    background-repeat: no-repeat;
+    transition: 0.3s;
+  }
+
+  .header.menu--shown .menu>dt::after {
+    margin-left: 16px;
+    width: 18px;
+  }
+
+  .menu>dd {
+    margin: 0;
+    width: max-content;
+    max-width: 0;
+    overflow: hidden;
+    transition: 0.3s;
+  }
+
+  .header.menu--shown .menu>dd {
+    max-width: 50%;
+  }
+
+  .menu-icon {
+    position: relative;
+    display: inline-block;
+    margin-right: 8px;
+    width: 18px;
+    height: 16px;
+  }
+
+  .menu-icon i::before,
+  .menu-icon i::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #DE3B21;
+    transition: 0.3s;
+  }
+
+  .menu-icon i:first-child::before {
+    top: calc(50% - 2px);
+    left: 0;
+  }
+
+  .menu-icon i:first-child::after {
+    bottom: calc(50% - 2px);
+    left: 0;
+  }
+
+  .menu-icon i:nth-child(2)::before {
+    top: calc(50% - 2px);
+    left: calc(50% - 2px);
+  }
+
+  .menu-icon i:nth-child(2)::after {
+    display: none;
+  }
+
+  .menu-icon i:last-child::before {
+    top: calc(50% - 2px);
+    right: 0;
+  }
+
+  .menu-icon i:last-child::after {
+    bottom: calc(50% - 2px);
+    right: 0;
+  }
+
+  .header.menu--shown .menu-icon i:first-child::before {
+    top: 0;
+    left: 1px;
+  }
+
+  .header.menu--shown .menu-icon i:first-child::after {
+    bottom: 0;
+    left: 1px;
+  }
+
+  .header.menu--shown .menu-icon i:last-child::before {
+    top: 0;
+    right: 1px;
+  }
+
+  .header.menu--shown .menu-icon i:last-child::after {
+    bottom: 0;
+    right: 1px;
+  }
+
+  .menu-button {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .main-navigation-link {
+    display: flex;
+    text-decoration: none;
+    min-width: max-content;
+  }
+
+  .main-navigation-link.current {
+    color: #DE3B21;
+    font-weight: bold;
+  }
+
+  .main-navigation>a:last-child {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    max-width: 300px;
+    margin-left: 24px;
+    padding-right: 24px;
+    padding-left: 24px;
+    overflow: hidden;
+    border-radius: 16px;
+    opacity: 1;
+    background-color: #DE3B21;
+    transition: 0.3s;
+  }
+
+  .main-navigation>a:last-child::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    background-image: url("../img/medicine.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .header.menu--shown .main-navigation>a:last-child {
+    margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
+    max-width: 0;
+    opacity: 0;
+  }
+
+  .search-container {
+    position: relative;
+    z-index: 0;
+    flex-grow: 1;
+    max-width: calc(50% - 16px);
+    height: 100%;
+  }
+
+  .search-form {
+    width: 100%;
+    height: 100%;
+  }
+
+  .search-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-right: 24px;
+    padding-left: 24px;
+    background-color: #fff;
+    border-radius: 16px;
+  }
+
+  .search-label::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    background-image: url("../img/search.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .search-input {
+    padding: 0;
+    border: 0;
+    max-width: calc(100% - 26px);
+  }
+
+  .search-input:focus {
+    outline: none;
+  }

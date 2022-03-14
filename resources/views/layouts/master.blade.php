@@ -12,8 +12,8 @@
   <meta name="yandex" content="none">
 
   <title>@yield('title') - Belinda Laboratories</title>
-  <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/master.css') }}">
+  
+  <link rel="stylesheet" href="{{ asset('css/main.css') }}">
   @yield('styles')
 </head>
 
@@ -24,9 +24,7 @@
     @include('layouts.footer')
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="{{ asset('js/owl.carousel.js') }}"></script>
-  <script src="{{ asset('js/master.js') }}" type="module"></script>
+  <script src="{{ asset('js/main.js') }}"></script>
   @yield('scripts')
 </body>
 
