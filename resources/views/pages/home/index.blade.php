@@ -3,13 +3,13 @@
 @section('title', 'Главная')
 
 @section('styles')
-  <link rel="stylesheet" href="{{ asset('css/pages/home/index.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 @endsection
 
 @section('content')
   <main class="home-page">
     <div class="company-info dark-card">
-      <blockquote>Здоровье - вечная ценность</blockquote>
+      <p><strong class="dark-card-term">Здоровье - вечная ценность</strong></p>
       <p>«Белинда» — одна из самых молодых компаний в мире международной фармакологии, которая была основана в 2001 году, но активно и успешно развивается с каждым днем, завоевывая доверие и уважение своих партнеров, а также привлекая новых. Основной целью и стратегией компании является разработка новых и эффективных методов лечения различных заболеваний.</p>
       <p>Для производства мы используем только самые качественные лекарственные материалы и субстанции, при создании которых соблюдаем все необходимые принципы и правила производства и контроля качества, что обеспечивает гарантию и уверенность в качестве и эффективности нашей продукции для всех врачей и пациентов.</p>
       <p>«Белинда» открывает свои двери для всех желающих приобрести международный опыт в области фармацевтики. Мы сторонники высокой кадровой политики компании, направленной на развитие команды амбициозных и талантливых профессионалов. Наша цель – создать комфортные и хорошие условия труда для всех и для каждого сотрудника.</p>
@@ -19,11 +19,13 @@
       <p class="light-card-definition">Узнать больше о
 Белинде</p>
     </a>
-    <a class="products-card light-card" href="{{route('products.index')}}">
-      <h3 class="light-card-term">Наши продукты</h3>
-      <p class="light-card-definition">Узнать больше о
+    <div class="products-card-wrapper">
+      <a class="products-card light-card" href="{{route('products.index')}}">
+        <h3 class="light-card-term">Наши продукты</h3>
+        <p class="light-card-definition">Узнать больше о
 наших продуктах</p>
-    </a>
+      </a>
+    </div>
     <a class="carrier-card light-card" href="{{route('carrier.index')}}">
       <h3 class="light-card-term">Карьера</h3>
       <p class="light-card-definition">Вакансии и
@@ -37,44 +39,26 @@
       <h3 class="light-card-term">Образ жизни</h3>
       <p class="light-card-definition">Самая популярная статья об образе жизни</p>
     </a>
-    <div class="light-card">
+    <div class="attention-card light-card">
       <h3 class="light-card-term">Внимание</h3>
       <p class="light-card-definition">Информация, представленная на этом сайте, не должна использоваться для самодиагностики и лечения и не может служить заменой очной консультации с доктором.</p>
     </div>
-
-    <div class="products-carousel">
-      <a class="product-card" href="#">
-        <figure>
-          <figcaption>Dorsob-T</figcaption>
-          <img src="{{asset('files/products/img/product.png')}}" alt="Dorsob-T">
-          <p class="category">Eye Drops</p>
-          <p class="recipe">OTC</p>
-        </figure>
-      </a>
-      <a class="product-card" href="#">
-        <figure>
-          <figcaption>Dorsob-T</figcaption>
-          <img src="{{asset('files/products/img/product.png')}}" alt="Dorsob-T">
-          <p class="category">Eye Drops</p>
-          <p class="recipe">OTC</p>
-        </figure>
-      </a>
-      <a class="product-card" href="#">
-        <figure>
-          <figcaption>Dorsob-T</figcaption>
-          <img src="{{asset('files/products/img/product.png')}}" alt="Dorsob-T">
-          <p class="category">Eye Drops</p>
-          <p class="recipe">OTC</p>
-        </figure>
-      </a>
-      <a class="product-card" href="#">
-        <figure>
-          <figcaption>Dorsob-T</figcaption>
-          <img src="{{asset('files/products/img/product.png')}}" alt="Dorsob-T">
-          <p class="category">Eye Drops</p>
-          <p class="recipe">OTC</p>
-        </figure>
-      </a>
+    <div class="glide">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+          @foreach (range(1,4) as $key)
+            <li class="glide__slide">
+              <a href="{{route('products.show', $key)}}">
+                <x-product />
+              </a>
+            </li>
+          @endforeach
+        </ul>
+      </div>
+      <div class="glide__arrows" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<"></button>
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">"></button>
+      </div>
     </div>
 
     <div id="map">
@@ -84,5 +68,5 @@
 @endsection
 
 @section('scripts')
-  <script src="{{ asset('js/pages/home/index.js') }}" type="module"></script>
+  <script src="{{ asset('js/home.js') }}" type="module"></script>
 @endsection

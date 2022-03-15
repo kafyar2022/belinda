@@ -1,0 +1,187 @@
+.home-page {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 312px);
+  grid-template-areas: "info info lifestyle about" "info info carrier news" "products products attention attention" "carousel carousel carousel carousel" "map map map map";
+  gap: 32px;
+}
+
+.home-page>*:first-child {
+  grid-area: info;
+}
+
+.home-page>*:nth-child(2) {
+  grid-area: about;
+}
+
+.home-page>*:nth-child(3) {
+  grid-area: products;
+}
+
+.home-page>*:nth-child(4) {
+  grid-area: carrier;
+}
+
+.home-page>*:nth-child(5) {
+  grid-area: news;
+}
+
+.home-page>*:nth-child(6) {
+  grid-area: lifestyle;
+}
+
+.home-page>*:nth-child(7) {
+  grid-area: attention;
+}
+
+.home-page>*:nth-child(8) {
+  grid-area: carousel;
+}
+
+.home-page>*:last-child {
+  grid-area: map;
+}
+
+.about-card,
+.products-card,
+.carrier-card,
+.news-card,
+.lifestyle-card,
+.attention-card {
+  position: relative;
+  z-index: 0;
+  height: 100%;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.about-card:hover,
+.products-card:hover,
+.carrier-card:hover,
+.news-card:hover,
+.lifestyle-card:hover {
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 10%);
+}
+
+.carrier-card,
+.lifestyle-card {
+  color: #fff;
+  justify-content: center;
+}
+
+.carrier-card h3,
+.lifestyle-card h3 {
+  font-weight: 500;
+  text-transform: none;
+}
+
+.about-card::before,
+.products-card::before,
+.news-card::before,
+.attention-card::before {
+  content: "";
+  width: 60px;
+  height: 60px;
+  margin-bottom: 32px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.lifestyle-card::before,
+.carrier-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.lifestyle-card:hover::before,
+.carrier-card:hover::before {
+  z-index: -1;
+  filter: brightness(0.4);
+}
+
+.about-card::before {
+  background-image: url("../img/about-icon.png");
+}
+
+.products-card::before {
+  background-image: url("../img/products-icon.png");
+}
+
+.carrier-card::before {
+  background-image: url("../img/carrier-bg.png");
+}
+
+.news-card::before {
+  background-image: url("../img/news-icon.png");
+}
+
+.lifestyle-card::before {
+  background-image: url("../img/lifestyle-bg.png");
+}
+
+.attention-card::before {
+  background-image: url("../img/attention-icon.png");
+}
+
+.about-card::after,
+.products-card::after,
+.news-card::after,
+.carrier-card::after,
+.lifestyle-card::after {
+  content: "";
+  width: 18px;
+  height: 10px;
+  margin-top: auto;
+  align-self: flex-end;
+  background-image: url("../img/arrow-right.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.carrier-card::after,
+.lifestyle-card::after {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  background-image: url("../img/arrow-right--white.svg");
+}
+
+.products-card-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.products-card-wrapper::after {
+  content: "";
+  background-image: url("../img/product-bg.png");
+  background-size: cover;
+  border-radius: 16px;
+  overflow: hidden;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.glide__slide>a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+#map {
+  overflow: hidden;
+}
+
+#map>iframe {
+  width: 100%;
+  height: 100%;
+  transform: translateY(-2px) translateX(-2px);
+}

@@ -12,7 +12,8 @@
   <meta name="yandex" content="none">
 
   <title>@yield('title') - Belinda Laboratories</title>
-  
+
+  <link rel="stylesheet" href="{{asset('glide/glide.css')}}">
   <link rel="stylesheet" href="{{ asset('css/main.css') }}">
   @yield('styles')
 </head>
@@ -24,6 +25,7 @@
     @include('layouts.footer')
   </div>
 
+  <script src="{{asset('glide/glide.min.js')}}"></script>
   <script src="{{ asset('js/main.js') }}"></script>
   @yield('scripts')
 </body>

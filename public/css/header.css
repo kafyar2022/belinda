@@ -166,7 +166,7 @@
 
   .main-navigation-link.current {
     color: #DE3B21;
-    font-weight: bold;
+    font-weight: 400;
   }
 
   .main-navigation>a:last-child {
