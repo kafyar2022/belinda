@@ -8,7 +8,6 @@ menuBtn.addEventListener('click', () => {
 
 document.body.addEventListener('click', (evt) => {
   !menu.contains(evt.target) ? header.classList.remove('menu--shown') : '';
-  console.log('sdfsd');
 });
 
 const searchInput = header.querySelector('input[type="search"]');
@@ -24,9 +23,12 @@ searchInput.addEventListener('focusout', () => {
   searchInput.value = '';
 });
 
-new Glide('.glide', {
-  type: 'carousel',
-  perView: 4,
-  gap: 32,
-  autoplay: 3000,
-}).mount()
+const glide = document.querySelector('[data-type="carousel"]');
+if (glide) {
+  new Glide('[data-type="carousel"]', {
+    type: 'carousel',
+    perView: 4,
+    gap: 32,
+    autoplay: 3000,
+  }).mount()
+}

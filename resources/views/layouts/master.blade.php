@@ -14,18 +14,21 @@
   <title>@yield('title') - Belinda Laboratories</title>
 
   <link rel="stylesheet" href="{{asset('glide/glide.css')}}">
+  <link rel="stylesheet" href="{{asset('bvselect/bvselect.css')}}" />
   <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-  @yield('styles')
 </head>
 
-<body>
+<body class="{{$route == 'products.attention' ? 'attention' : ''}}">
   <div class="container">
     @include('layouts.header')
     @yield('content')
     @include('layouts.footer')
   </div>
+  <template >
 
+  </template>
   <script src="{{asset('glide/glide.min.js')}}"></script>
+  <script src="{{asset('bvselect/bvselect.js')}}"></script>
   <script src="{{ asset('js/main.js') }}"></script>
   @yield('scripts')
 </body>

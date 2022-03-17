@@ -15,4 +15,9 @@ class ProductsController extends Controller
   {
     return view('pages.products.show');
   }
+
+  public function attention() 
+  {
+    return view('pages.products.attention');
+  }
 }

@@ -14,7 +14,7 @@
       <dd><a class="main-navigation-link {{ $route === 'newslifestyle.index' || $route === 'newslifestyle.show' ? 'current' : '' }}" href="{{ route('newslifestyle.index') }}">Новости и образ жизни</a></dd>
       <dd><a class="main-navigation-link {{ $route === 'contacts.index' ? 'current' : '' }}" href="{{ route('contacts.index') }}">Контакты</a></dd>
     </dl>
-    <a href="{{ route('about.index') }}">Продукты</a>
+    <a href="{{ route('products.index') }}">Продукты</a>
   </nav>
   <div class="search-container">
     <form action="#" method="get" class="search-form">
