@@ -18,15 +18,13 @@
   <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 </head>
 
-<body class="{{$route == 'products.attention' ? 'attention' : ''}}">
+<body class="{{$route == 'products.attention' ? 'attention' : ''}} {{ $route == 'carrier.apply' ? 'apply' : '' }}">
   <div class="container">
     @include('layouts.header')
     @yield('content')
     @include('layouts.footer')
   </div>
-  <template >
-
-  </template>
+  
   <script src="{{asset('glide/glide.min.js')}}"></script>
   <script src="{{asset('bvselect/bvselect.js')}}"></script>
   <script src="{{ asset('js/main.js') }}"></script>

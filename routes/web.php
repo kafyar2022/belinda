@@ -28,6 +28,7 @@ Route::get('/products/attention', [ProductsController::class, 'attention'])->nam
 Route::get('/products/{id}', [ProductsController::class, 'show'])->name('products.show');
 
 Route::get('/carrier', [CarrierController::class, 'index'])->name('carrier.index');
+Route::get('/carrier/apply', [CarrierController::class, 'apply'])->name('carrier.apply');
 
 Route::get('/newslifestyle', [NewsLifestyleController::class, 'index'])->name('newslifestyle.index');
 Route::get('/newslifestyle/{id}', [NewsLifestyleController::class, 'show'])->name('newslifestyle.show');

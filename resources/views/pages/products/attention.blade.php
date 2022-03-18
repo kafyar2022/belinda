@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('title', 'Внимание')
+
 @section('content')
   <main class="attention-page">
     <div class="attention-card">

@@ -58,6 +58,113 @@ input[type="search"]::-webkit-search-results-decoration {
   flex-direction: column;
   min-height: 100vh;
 }
+body.apply header,
+body.apply footer {
+  display: none;
+  visibility: hidden;
+}
+.apply {
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+}
+.apply__title {
+  min-width: calc(50% - 16px);
+  margin-right: 32px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+}
+.apply__title::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin-top: 32px;
+  border-radius: 16px;
+  overflow: hidden;
+  background-image: url("../img/apply.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.apply-form__group {
+  border: none;
+}
+.apply-form__input {
+  display: flex;
+  border: none;
+  width: 100%;
+  height: 60px;
+  border-radius: 16px;
+  overflow: hidden;
+  padding-right: 40px;
+  padding-left: 40px;
+  color: #424A52;
+}
+.apply-form__item {
+  position: relative;
+}
+.apply-form__textarea {
+  position: relative;
+  display: flex;
+  border-radius: 16px;
+  width: 100%;
+  height: 130px;
+  padding-top: 24px;
+  padding-right: 40px;
+  padding-bottom: 24px;
+  padding-left: 40px;
+  color: #424A52;
+  resize: none;
+}
+.apply-form__textarea-limit {
+  content: "";
+  position: absolute;
+  right: 16px;
+  bottom: 8px;
+  color: #DE3B21;
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 400;
+}
+.apply-form__footer {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+.apply-form__file-label {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  text-transform: uppercase;
+}
+.apply-form__file-label::before {
+  content: "";
+  display: block;
+  height: 60px;
+  width: 60px;
+  margin-right: 8px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-image: url("../img/cv-file.svg");
+  background-color: #DE3B21;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.apply-form__submit-btn {
+  border: none;
+  min-width: max-content;
+  padding-right: 24px;
+  padding-left: 24px;
+}
+.apply-form__aware {
+  margin-top: 8px;
+  margin-left: auto;
+  color: #7A8085;
+  text-align: right;
+  white-space: pre-wrap;
+}
 
 /* <<= global styles */
 
@@ -1025,14 +1132,16 @@ input[type="search"]::-webkit-search-results-decoration {
 .about-page__map {
   height: 312px;
 }
-.products-page__info {
+.products-page__info,
+.carrier-page__info {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 32px;
   margin-bottom: 32px;
   min-height: 380px;
 }
-.products-page__info::after {
+.products-page__info::after,
+.carrier-page__info::after {
   content: "";
   display: block;
   height: 100%;
@@ -1043,6 +1152,9 @@ input[type="search"]::-webkit-search-results-decoration {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("../img/products-page-belinda.png");
+}
+.carrier-page__info::after {
+  background-image: url("../img/carrier-page-belinda.png");
 }
 .products-page__filter {
   display: grid;
@@ -1235,7 +1347,6 @@ input[type="search"]::-webkit-search-results-decoration {
 .accordion__body {
   margin: 0;
   padding: 0;
-  max-height: 50%;
   overflow: hidden;
   transition: 0.3s;
 }
@@ -1243,7 +1354,7 @@ input[type="search"]::-webkit-search-results-decoration {
   margin-bottom: 8px;
 }
 .accordion__head--hidden+.accordion__body {
-  max-height: 0;
+  height: 0;
 }
 .sample-description-term {
   display: flex;
@@ -1398,6 +1509,46 @@ body.attention .container {
   font-weight: 300;
   text-decoration: none;
 }
+.vacancies__title {
+  margin-bottom: 32px;
+}
+.carrier-page__info {
+  width: 100%;
+}
+.vacancies__link {
+  margin-top: 32px;
+  margin-bottom: 32px;
+  margin-left: auto;
+}
+.no-vacancy {
+  padding: 72px;
+  background-color: #fff;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  white-space: pre-wrap;
+  text-align: center;
+}
+.no-vacancy::before {
+  content: "";
+  display: block;
+  align-self: center;
+  width: 34px;
+  height: 30px;
+  margin-bottom: 8px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../img/no-vacancy.svg");
+}
+.no-vacancy__link {
+  text-decoration: none;
+  display: block;
+  margin-top: 16px;
+  color: #DE3B21;
+  font-weight: 700;
+}
+
 /* =>> adaptation */
 
 

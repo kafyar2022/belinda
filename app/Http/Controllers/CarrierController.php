@@ -10,4 +10,9 @@ class CarrierController extends Controller
   {
     return view('pages.carrier.index');
   }
+
+  public function apply()
+  {
+    return view('pages.carrier.apply');
+  }
 }
