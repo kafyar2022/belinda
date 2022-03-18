@@ -1656,7 +1656,53 @@ body.attention .container {
   display: block;
   margin-bottom: 16px;
 }
-
+.contacts-vitrin {
+  margin-bottom: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: max-content auto;
+  grid-template-areas: "img form" "card form";
+  gap: 32px;
+}
+.contacts-vitrin::before {
+  content: "";
+  grid-area: img;
+  border-radius: 16px;
+  overflow: hidden;
+  background-image: url("../img/contacts.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.contacts-vitrin section {
+  position: relative;
+  grid-area: card;
+  display: flex;
+  flex-direction: column;
+}
+.contacts-vitrin .socials {
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+}
+.contacts-vitrin .contacts-card::before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 60px;
+  background-image: url("../img/contacts-info.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-bottom: 32px;
+}
+.contacts-vitrin form {
+  grid-area: form;
+}
+.contacts-vitrin dl {
+  margin: 0;
+  max-width: max-content;
+}
 /* =>> adaptation */
 
 
