@@ -31,6 +31,8 @@ Route::get('/carrier', [CarrierController::class, 'index'])->name('carrier.index
 Route::get('/carrier/apply', [CarrierController::class, 'apply'])->name('carrier.apply');
 
 Route::get('/newslifestyle', [NewsLifestyleController::class, 'index'])->name('newslifestyle.index');
+Route::get('/newslifestyle/news', [NewsLifestyleController::class, 'news'])->name('newslifestyle.news');
+Route::get('/newslifestyle/lifestyle', [NewsLifestyleController::class, 'lifestyle'])->name('newslifestyle.lifestyle');
 Route::get('/newslifestyle/{id}', [NewsLifestyleController::class, 'show'])->name('newslifestyle.show');
 
 Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts.index');

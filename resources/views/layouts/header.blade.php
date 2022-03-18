@@ -11,7 +11,7 @@
       <dd><a class="main-navigation-link {{ $route === 'about.index' ? 'current' : '' }}" href="{{ route('about.index') }}">О нас</a></dd>
       <dd><a class="main-navigation-link {{ $route === 'products.index' || $route === 'products.show' ? 'current' : '' }}" href="{{ route('products.index') }}">Продукты</a></dd>
       <dd><a class="main-navigation-link {{ $route === 'carrier.index' ? 'current' : '' }}" href="{{ route('carrier.index') }}">Карьера</a></dd>
-      <dd><a class="main-navigation-link {{ $route === 'newslifestyle.index' || $route === 'newslifestyle.show' ? 'current' : '' }}" href="{{ route('newslifestyle.index') }}">Новости и образ жизни</a></dd>
+      <dd><a class="main-navigation-link {{ $route === 'newslifestyle.index' || $route === 'newslifestyle.show' || $route === 'newslifestyle.news' || $route === 'newslifestyle.lifestyle' ? 'current' : '' }}" href="{{ route('newslifestyle.index') }}">Новости и образ жизни</a></dd>
       <dd><a class="main-navigation-link {{ $route === 'contacts.index' ? 'current' : '' }}" href="{{ route('contacts.index') }}">Контакты</a></dd>
     </dl>
     <a href="{{ route('products.index') }}">Продукты</a>

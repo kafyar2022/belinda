@@ -10,6 +10,14 @@ class NewsLifestyleController extends Controller
   {
     return view('pages.newslifestyle.index');
   }
+  public function news()
+  {
+    return view('pages.newslifestyle.news');
+  }
+  public function lifestyle()
+  {
+    return view('pages.newslifestyle.lifestyle');
+  }
 
   public function show($id)
   {

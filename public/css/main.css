@@ -88,10 +88,10 @@ body.apply footer {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.apply-form__group {
+.form__group {
   border: none;
 }
-.apply-form__input {
+.form__input {
   display: flex;
   border: none;
   width: 100%;
@@ -102,10 +102,10 @@ body.apply footer {
   padding-left: 40px;
   color: #424A52;
 }
-.apply-form__item {
+.form__item {
   position: relative;
 }
-.apply-form__textarea {
+.form__textarea {
   position: relative;
   display: flex;
   border-radius: 16px;
@@ -118,7 +118,7 @@ body.apply footer {
   color: #424A52;
   resize: none;
 }
-.apply-form__textarea-limit {
+.form__textarea-limit {
   content: "";
   position: absolute;
   right: 16px;
@@ -128,18 +128,18 @@ body.apply footer {
   font-size: 12px;
   font-weight: 400;
 }
-.apply-form__footer {
+.form__footer {
   display: flex;
   flex-wrap: wrap;
   margin-top: 32px;
 }
-.apply-form__file-label {
+.form__file-label {
   display: flex;
   align-items: center;
   margin-right: auto;
   text-transform: uppercase;
 }
-.apply-form__file-label::before {
+.form__file-label::before {
   content: "";
   display: block;
   height: 60px;
@@ -152,13 +152,13 @@ body.apply footer {
   background-position: center center;
   background-repeat: no-repeat;
 }
-.apply-form__submit-btn {
+.form__submit-btn {
   border: none;
   min-width: max-content;
   padding-right: 24px;
   padding-left: 24px;
 }
-.apply-form__aware {
+.form__aware {
   margin-top: 8px;
   margin-left: auto;
   color: #7A8085;
@@ -1541,12 +1541,120 @@ body.attention .container {
   background-size: contain;
   background-image: url("../img/no-vacancy.svg");
 }
+.newslifestyle__img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 16px;
+}
 .no-vacancy__link {
   text-decoration: none;
   display: block;
   margin-top: 16px;
   color: #DE3B21;
   font-weight: 700;
+}
+.newslifestyle-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.newslifestyle__title {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+.newslifestyle-list {
+  list-style: none;
+  display: grid;
+  gap: 32px;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr;
+}
+.newslifestyle-list--more {
+  grid-template-columns: 1fr 1fr;
+}
+.newslifestyle-card {
+  position: relative;
+  z-index: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.newslifestyle-card__inner {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  padding-right: 20px;
+  background-color: #fff;
+  border-radius: 16px;
+}
+.newslifestyle-card__inner::after {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 10px;
+  margin-top: auto;
+  margin-left: auto;
+  background-image: url("../img/arrow-right.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.newslifestyle-card__title {
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.newslifestyle-card__description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  line-clamp: 7;
+  -webkit-box-orient: vertical;
+}
+.newslifestyle-card__link {
+  color: transparent;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.newslifestyle-show {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+.newslifestyle-show__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+.newslifestyle-show__inner {
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 16px;
+}
+.newslifestyle-show__title {
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+.newslifestyle-show__datetime {
+  font-size: 12px;
+  display: block;
+  margin-bottom: 16px;
 }
 
 /* =>> adaptation */
