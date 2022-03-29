@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Helpers\Helper;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Schema;
@@ -31,8 +32,11 @@ class AppServiceProvider extends ServiceProvider
 
     view()->composer('*', function ($view) {
 
+      $app = Helper::getApp();
+
       return $view->with([
         'route' => \Route::currentRouteName(),
+        'app' => $app
       ]);
     });
   }

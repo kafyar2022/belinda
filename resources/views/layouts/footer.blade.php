@@ -44,20 +44,30 @@
     <dl>
       <div class="contacts-card-item">
         <dt>Адрес: </dt>
-        <dd><a href="http://maps.google.com/?q=38.542405,68.773123'" class="address" target="_blank">ул. Каххорова 111, Душанбе, Таджикистан</a></dd>
+        <dd>
+          <a class="address" target="_blank">ул. Каххорова 111, Душанбе, Таджикистан</a>
+        </dd>
       </div>
       <div class="contacts-card-item">
         <dt>Тел: </dt>
-        <dd><a href="tel:+992918000000">+992 (918) 00-00-00</a></dd>
+        <dd>
+          <a href="tel:{{str_replace([' ', '(', ')', '-'],'', $app['phone'])}}">{{ $app['phone'] }}</a>
+        </dd>
       </div>
       <div class="contacts-card-item">
         <dt>E-mail: </dt>
-        <dd><a href="mailto:info@belinda.tj.com">info@belinda.tj.com</a></dd>
+        <dd>
+          <a href="mailto:{{$app['email']}}">{{ $app['email'] }}</a>
+        </dd>
       </div>
     </dl>
     <ul class="socials">
-      <li><a href="#" class="socials-link"><img src="{{asset('files/instagram.svg')}}" alt="Инстаграм"></a></li>
-      <li><a href="#" class="socials-link"><img src="{{asset('files/facebook.svg')}}" alt="Фейсбук"></a></li>
+      <li>
+        <a href="#" class="socials-link"><img src="{{asset('files/instagram.svg')}}" alt="Инстаграм"></a>
+      </li>
+      <li>
+        <a href="#" class="socials-link"><img src="{{asset('files/facebook.svg')}}" alt="Фейсбук"></a>
+      </li>
     </ul>
   </section>
 
@@ -65,6 +75,6 @@
     <div class="logo-wrapper">
       <img class="main-logo" src="{{ asset('img/main-logo.svg') }}" alt="Логотип компании Belinda">
     </div>
-    <p class="copyright">© 2010-2021 Belinda. Все права защищены</p>
+    <p class="copyright">{{$app['copyright']}}</p>
   </div>
 </footer>

@@ -1052,16 +1052,16 @@ body.apply footer {
   margin-bottom: 32px;
   flex-grow: 1;
 }
-.principle-item>dt {
+.principles>h3 {
   font-weight: 700;
   margin-bottom: 16px;
   text-transform: uppercase;
+  max-width: max-content;
 }
-.principle-item>dd {
+.principles>p {
   margin: 0;
-}
-.principle-item>dd:last-child {
   margin-bottom: 16px;
+  white-space: pre-wrap;
 }
 .mission-vision__title {
   margin-bottom: 32px;

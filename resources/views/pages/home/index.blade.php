@@ -5,41 +5,34 @@
 @section('content')
   <main class="home-page">
     <div class="sample-wrapper sample-wrapper--dark">
-      <q class="sample-wrapper__title sample-wrapper__title--big" cite="{{ route('home.index') }}">Здоровье - вечная ценность</q>
-      <p>«Белинда» — одна из самых молодых компаний в мире международной фармакологии, которая была основана в 2001 году, но активно и успешно развивается с каждым днем, завоевывая доверие и уважение своих партнеров, а также привлекая новых. Основной целью и стратегией компании является разработка новых и эффективных методов лечения различных заболеваний.</p>
-      <p>Для производства мы используем только самые качественные лекарственные материалы и субстанции, при создании которых соблюдаем все необходимые принципы и правила производства и контроля качества, что обеспечивает гарантию и уверенность в качестве и эффективности нашей продукции для всех врачей и пациентов.</p>
-      <p>«Белинда» открывает свои двери для всех желающих приобрести международный опыт в области фармацевтики. Мы сторонники высокой кадровой политики компании, направленной на развитие команды амбициозных и талантливых профессионалов. Наша цель – создать комфортные и хорошие условия труда для всех и для каждого сотрудника.</p>
+      <q class="sample-wrapper__title sample-wrapper__title--big" cite="{{ route('home.index') }}">{{$page['quote']}}</q>
+      <p>{{$page['info']}}</p>
     </div>
     <a class="home-page__about sample-wrapper sample-wrapper--link" href="{{ route('about.index') }}">
-      <h3 class="sample-wrapper__title">О нас</h3>
-      <p>Узнать больше о
-Белинде</p>
+      <h3 class="sample-wrapper__title">{{$page['about-title']}}</h3>
+      <p>{{$page['about-text']}}</p>
     </a>
     <div class="home-page__product-wrapper">
       <a class="home-page__product sample-wrapper sample-wrapper--link" href="{{ route('products.index') }}">
-        <h3 class="sample-wrapper__title">Наши продукты</h3>
-        <p>Узнать больше о
-наших продуктах</p>
+        <h3 class="sample-wrapper__title">{{$page['products-title']}}</h3>
+        <p>{{$page['products-text']}}</p>
       </a>
     </div>
     <a class="home-page__carrier hover-wrapper" href="{{ route('carrier.index') }}">
-      <h3 class="hover-wrapper__title">Карьера</h3>
-      <p>Вакансии и
-работа в компании</p>
+      <h3 class="hover-wrapper__title">{{$page['carrier-title']}}</h3>
+      <p>{{$page['carrier-text']}}</p>
     </a>
     <a class="home-page__news sample-wrapper sample-wrapper--link" href="{{ route('newslifestyle.index') }}">
-      <h3 class="sample-wrapper__title">Новости компании</h3>
-      <p>Самая популярная
-новость компании</p>
+      <h3 class="sample-wrapper__title">{{$page['news-title']}}</h3>
+      <p>{{$page['news-text']}}</p>
     </a>
     <a class="home-page__lifestyle hover-wrapper" href="{{ route('newslifestyle.index') }}">
-      <h3 class="hover-wrapper__title">Образ жизни</h3>
-      <p>Самая популярная статья
-об образе жизни</p>
+      <h3 class="hover-wrapper__title">{{$page['lifestyle-title']}}</h3>
+      <p>{{$page['lifestyle-text']}}</p>
     </a>
     <div class="home-page__attention sample-wrapper">
-      <h3 class="sample-wrapper__title">Внимание</h3>
-      <p>Информация, представленная на этом сайте, не должна использоваться для самодиагностики и лечения и не может служить заменой очной консультации с доктором.</p>
+      <h3 class="sample-wrapper__title">{{$page['attention-title']}}</h3>
+      <p>{{$page['attention-text']}}</p>
     </div>
     <div class="glide" data-type="carousel">
       <div class="glide__track" data-glide-el="track">
