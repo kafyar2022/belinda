@@ -311,6 +311,42 @@ class TextSeeder extends Seeder
         'caption' => 'global-presence-title',
         'text' => 'Глобальное присутствие'
       ),
+      array(
+        'id' => 46,
+        'page' => 'products',
+        'caption' => 'belinda-products-title',
+        'text' => 'Продукты Белинда',
+      ),
+      array(
+        'id' => 47,
+        'page' => 'products',
+        'caption' => 'belinda-products-text',
+        'text' => 'Для производства мы используем только самые качественные лекарственные материалы и субстанции, при создании которых соблюдаем все необходимые принципы и правила производства и контроля качества, что обеспечивает гарантию и уверенность в качестве и эффективности нашей продукции для всех врачей и пациентов.',
+      ),
+      array(
+        'id' => 48,
+        'page' => 'products',
+        'caption' => 'classification-title',
+        'text' => 'АТХ классификация',
+      ),
+      array(
+        'id' => 49,
+        'page' => 'products',
+        'caption' => 'nosology-title',
+        'text' => 'Нозология',
+      ),
+      array(
+        'id' => 50,
+        'page' => 'products',
+        'caption' => 'prescription',
+        'text' => 'Тип',
+      ),
+      array(
+        'id' => 51,
+        'page' => 'products',
+        'caption' => 'all-products',
+        'text' => 'Все продукты',
+      ),
     );
 
     foreach ($texts as $text) {

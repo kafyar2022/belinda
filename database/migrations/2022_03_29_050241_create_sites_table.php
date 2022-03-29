@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddSoftDeleteColumn extends Migration
+class CreateSitesTable extends Migration
 {
   /**
    * Run the migrations.
@@ -13,8 +13,12 @@ class AddSoftDeleteColumn extends Migration
    */
   public function up()
   {
-    Schema::table('texts', function (Blueprint $table) {
-      $table->softDeletes();
+    Schema::create('sites', function (Blueprint $table) {
+      $table->id();
+      $table->string('title');
+      $table->string('site');
+      $table->string('url');
+      $table->timestamps();
     });
   }
 
@@ -25,8 +29,6 @@ class AddSoftDeleteColumn extends Migration
    */
   public function down()
   {
-    Schema::table('texts', function (Blueprint $table) {
-      $table->dropSoftDeletes();
-    });
+    Schema::dropIfExists('sites');
   }
 }

@@ -52,33 +52,33 @@
         <h2 class="mission-vision__title sample-title">{{ $page['mission-vision-title'] }}</h2>
         <ul class="mission-vision-list">
           <li class="mission-vision-item sample-wrapper">
-            <h3 class="sample-wrapper__title">{{$page['mission-vision-title-1']}}</h3>
-            <p>{{$page['mission-vision-text-1']}}</p>
+            <h3 class="sample-wrapper__title">{{ $page['mission-vision-title-1'] }}</h3>
+            <p>{{ $page['mission-vision-text-1'] }}</p>
           </li>
           <li class="mission-vision-item sample-wrapper">
-            <h3 class="sample-wrapper__title">{{$page['mission-vision-title-2']}}</h3>
-            <p>{{$page['mission-vision-text-2']}}</p>
+            <h3 class="sample-wrapper__title">{{ $page['mission-vision-title-2'] }}</h3>
+            <p>{{ $page['mission-vision-text-2'] }}</p>
           </li>
           <li class="mission-vision-item sample-wrapper">
-            <h3 class="sample-wrapper__title">{{$page['mission-vision-title-3']}}</h3>
-            <p>{{$page['mission-vision-text-3']}}</p>
+            <h3 class="sample-wrapper__title">{{ $page['mission-vision-title-3'] }}</h3>
+            <p>{{ $page['mission-vision-text-3'] }}</p>
           </li>
         </ul>
       </section>
     </div>
 
     <section class="global-presence">
-      <h2 class="global-presence__title sample-title">{{$page['global-presence-title']}}</h2>
+      <h2 class="global-presence__title sample-title">{{ $page['global-presence-title'] }}</h2>
       <div class="global-presence__carousel">
         <div class="glide" data-type="carousel">
           <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides">
-              @foreach (range(1, 4) as $key)
+              @foreach ($page['sites'] as $site)
                 <li class="glide__slide">
-                  <a class="site-item sample-wrapper" href="https://belinda.tj" target="_blank">
+                  <a class="site-item sample-wrapper" href="{{ $site->site }}" target="_blank">
                     <div class="site-item__inner">
-                      <h3 class="sample-wrapper__title">Таджикистан</h3>
-                      <cite class="site-item__url">www.belinda.tj</cite>
+                      <h3 class="sample-wrapper__title">{{ $site->title }}</h3>
+                      <cite class="site-item__url">{{ $site->site }}</cite>
                     </div>
                   </a>
                 </li>

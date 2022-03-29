@@ -6,42 +6,39 @@
   <main class="products-page">
     <section class="products-page__info">
       <div class="sample-wrapper sample-wrapper--dark">
-        <h2 class="sample-wrapper__title sample-wrapper__title--big">Продукты Белинда</h2>
-        <p>Для производства мы используем только самые качественные лекарственные материалы и субстанции, при создании которых соблюдаем все необходимые принципы и правила производства и контроля качества, что обеспечивает гарантию и уверенность в качестве и эффективности нашей продукции для всех врачей и пациентов.</p>
+        <h2 class="sample-wrapper__title sample-wrapper__title--big">{{ $page['belinda-products-title'] }}</h2>
+        <p>{{ $page['belinda-products-text'] }}</p>
       </div>
     </section>
+    
     <div class="products-page__filter">
-      <form class="products-page__filter-form products-filter">
+      <form class="products-page__filter-form products-filter" action="{{route('products.filter')}}" method="post">
         @csrf
         <p class="products-filter__item">
-          <label class="visually-hidden" for="classification">АТХ классификация</label>
-          <select name="classification" id="classification" data-placeholder="АТХ классификация">
-            <option data-separator="true" value="">АТХ классификация</option>
-            <option value="#">Аминокислоты</option>
-            <option value="#">Аминокислоты</option>
-            <option value="#">Аминокислоты</option>
-            <option value="#">Аминокислоты</option>
-            <option value="#">Аминокислоты</option>
-            <option value="#">Аминокислоты</option>
-            <option value="#">Аминокислоты</option>
+          <label class="visually-hidden" for="classification">{{ $page['classification-title'] }}</label>
+          <select name="classification" id="classification" data-placeholder="{{ $page['classification-title'] }}">
+            <option value="">{{ $page['classification-title'] }}</option>
+            @foreach ($page['classifications'] as $classification)
+              <option value="{{ $classification->id }}">{{ $classification->title }}</option>
+            @endforeach
           </select>
         </p>
         <p class="products-filter__item">
-          <label class="visually-hidden" for="nosology">Нозология</label>
-          <select name="nosology" id="nosology" data-placeholder="Нозология">
-            <option data-separator="true" value="">Нозология</option>
-            <option value="#">Аллергология</option>
-            <option value="#">Аллергология</option>
-            <option value="#">Аллергология</option>
+          <label class="visually-hidden" for="nosology">{{ $page['nosology-title'] }}</label>
+          <select name="nosology" id="nosology" data-placeholder="{{ $page['nosology-title'] }}">
+            <option value="">{{ $page['nosology-title'] }}</option>
+            @foreach ($page['nosologies'] as $nosology)
+              <option value="{{ $nosology->id }}">{{ $nosology->title }}</option>
+            @endforeach
           </select>
         </p>
         <p class="products-filter__item">
-          <label class="visually-hidden" for="recipe">Тип</label>
-          <select name="recipe" id="recipe" data-placeholder="Тип">
-            <option data-separator="true" value="">Тип</option>
-            <option value="#">OTC</option>
-            <option value="#">OTC</option>
-            <option value="#">OTC</option>
+          <label class="visually-hidden" for="recipe">{{ $page['prescription'] }}</label>
+          <select name="prescription" id="recipe" data-placeholder="{{ $page['prescription'] }}">
+            <option value="">{{ $page['prescription'] }}</option>
+            <option>OTC</option>
+            <option>RX</option>
+            <option>BAD</option>
           </select>
         </p>
       </form>
@@ -57,14 +54,17 @@
     </div>
 
     <section class="products">
-      <h2 class="products__title sample-title">Все продукты</h2>
-      <ul class="products-list">
-        @foreach (range(1,16) as $key)
-          <li class="products-list__item">
-            <x-product :product="$key" />
-          </li>
-        @endforeach
-      </ul>
+      <h2 class="products__title sample-title">{{ $page['all-products'] }}</h2>
+      <div class="products-inner">
+        <ul class="products-list">
+          @foreach ($page['products'] as $product)
+            <li class="products-list__item">
+              <x-product :product="$product" />
+            </li>
+          @endforeach
+        </ul>
+        {{ $page['products']->links() }}
+      </div>
     </section>
   </main>
 @endsection

@@ -41,7 +41,6 @@
 .up {
   transform: rotate(-180deg);
   -webkit-transform: rotate(-180deg);
-  margin-top: 5px;
   transition: all .2s ease
 }
 .down {
@@ -97,6 +96,9 @@
   font-family: arial;
   font-size: 10pt;
   padding: 12px 28px 10px 10px;
+}
+.bv_ul_inner li:nth-child(2) {
+  display: none;
 }
 .bv_ul_inner i {
   color: #464646;
