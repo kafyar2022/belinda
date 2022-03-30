@@ -347,6 +347,55 @@ class TextSeeder extends Seeder
         'caption' => 'all-products',
         'text' => 'Все продукты',
       ),
+      array(
+        'id' => 52,
+        'page' => null,
+        'caption' => 'download-instructions',
+        'text' => 'Скачать
+инструкцию',
+      ),
+      array(
+        'id' => 53,
+        'page' => null,
+        'caption' => 'composition',
+        'text' => 'Состав',
+      ),
+      array(
+        'id' => 54,
+        'page' => null,
+        'caption' => 'indications',
+        'text' => 'Показания к применению',
+      ),
+      array(
+        'id' => 55,
+        'page' => null,
+        'caption' => 'see',
+        'text' => 'Посмотреть',
+      ),
+      array(
+        'id' => 56,
+        'page' => null,
+        'caption' => 'mode',
+        'text' => 'Способ применения',
+      ),
+      array(
+        'id' => 57,
+        'page' => null,
+        'caption' => 'similar-products',
+        'text' => 'Похожие продукты',
+      ),
+      array(
+        'id' => 58,
+        'page' => null,
+        'caption' => 'popular-products',
+        'text' => 'Популярные продукты',
+      ),
+      array(
+        'id' => 59,
+        'page' => null,
+        'caption' => 'back-to-products',
+        'text' => 'Назад ко всем продуктам',
+      ),
     );
 
     foreach ($texts as $text) {

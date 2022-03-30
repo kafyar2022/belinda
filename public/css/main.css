@@ -1368,6 +1368,10 @@ body.apply footer {
   display: flex;
   width: 100%;
   height: 60px;
+  background-color: #424a52;
+}
+.accordion__head--hidden .sample-description-term {
+  background-color: #fff;
 }
 .sample-description-term__title {
   display: flex;
@@ -1380,10 +1384,16 @@ body.apply footer {
   width: 33%;
 }
 .sample-description-term__subtitle {
-  display: flex;
   align-self: center;
   margin-left: 40px;
   margin-right: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  max-width: 50%;
 }
 .sample-description-term__button {
   margin-right: 40px;
@@ -1397,6 +1407,7 @@ body.apply footer {
   align-self: center;
   transform: rotate(-180deg);
   user-select: none;
+  background-color: #fff;
   transition: 0.3s;
 }
 .accordion__head--hidden .sample-description-term__button {

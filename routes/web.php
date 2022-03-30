@@ -26,6 +26,7 @@ Route::get('/about', [AboutController::class, 'index'])->name('about.index');
 Route::get('/products', [ProductsController::class, 'index'])->name('products.index');
 Route::post('/products/filter', [ProductsController::class, 'filter'])->name('products.filter');
 Route::get('/products/attention', [ProductsController::class, 'attention'])->name('products.attention');
+Route::get('/products/download_instruction', [ProductsController::class, 'downloadInstruction'])->name('products.download_instruction');
 Route::get('/products/{id}', [ProductsController::class, 'show'])->name('products.show');
 
 Route::get('/carrier', [CarrierController::class, 'index'])->name('carrier.index');

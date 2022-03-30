@@ -10,8 +10,15 @@ use Illuminate\Http\Request;
 
 class ProductsController extends Controller
 {
-  public function index()
+  public function index(Request $request)
   {
+    if ($request->agreement == 'agree') {
+      session()->put('aware', 'awared');
+    }
+    if (!session()->has('aware')) {
+      return redirect(route('products.attention'));
+    }
+
     $page = Helper::getPage('products');
     $page['classifications'] = Classification::get();
     $page['nosologies'] = Nosology::get();
@@ -57,9 +64,41 @@ class ProductsController extends Controller
     return json_encode($response);
   }
 
-  public function show($id)
+  public function show(Request $request)
   {
-    return view('pages.products.show');
+    if ($request->agree == 'agree') {
+      session()->put('aware', 'awared');
+    }
+    if (!session()->has('aware')) {
+      return redirect(route('products.attention'));
+    }
+    $page['product'] = Product::find($request->id);
+
+    $page['similar-products'] = Product::where('nosology_id', $page['product']->nosology_id)
+      ->orWhere('classification_id', $page['product']->classification_id)
+      ->get();
+
+    $page['popular-products'] = Product::orderBy('title')->take(9)->get();
+
+    return view('pages.products.show', compact('page'));
+  }
+
+  public function downloadInstruction(Request $request)
+  {
+    $product = Product::find($request->id);
+
+    if (!$product->filename) {
+      return back();
+    }
+    $file = public_path('files/products/instructions/' . $product->filename);
+
+    $extension = pathinfo($file, PATHINFO_EXTENSION);
+
+    $headers = array(
+      'Content-Type: application/' . $extension,
+    );
+
+    return response()->download($file, $product->filename, $headers);
   }
 
   public function attention()
