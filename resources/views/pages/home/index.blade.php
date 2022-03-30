@@ -37,9 +37,9 @@
     <div class="glide" data-type="carousel">
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
-          @foreach (range(1, 4) as $key)
+          @foreach ($page['products'] as $product)
             <li class="glide__slide">
-              <x-product :product="$key" />
+              <x-product :product="$product" />
             </li>
           @endforeach
         </ul>

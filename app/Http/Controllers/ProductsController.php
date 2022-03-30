@@ -25,9 +25,19 @@ class ProductsController extends Controller
     $classification = $request->json('classification');
     $nosology = $request->json('nosology');
     $prescription = $request->json('prescription');
-    
+    $keyword = $request->json('keyword');
+
     $products = Product::orderBy('title');
-    
+
+    if ($keyword) {
+      $products->select('products.id', 'products.nosology_id', 'products.classification_id', 'products.title', 'products.prescription', 'products.picture')
+        ->join('classifications', 'products.classification_id', '=', 'classifications.id')
+        ->join('nosologies', 'products.nosology_id', '=', 'nosologies.id')
+        ->where('products.title', 'like', '%' . $keyword . '%')
+        ->orWhere('products.prescription', 'like', '%' . $keyword . '%')
+        ->orWhere('classifications.title', 'like', '%' . $keyword . '%')
+        ->orWhere('nosologies.title', 'like', '%' . $keyword . '%');
+    }
     if ($classification) {
       $products->where('classification_id', $classification);
     }
@@ -43,7 +53,7 @@ class ProductsController extends Controller
     $response = [
       'template' => view('pages.products.data', compact('products'))->render(),
     ];
-    
+
     return json_encode($response);
   }
 

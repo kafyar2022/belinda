@@ -1,5 +1,8 @@
 import { getFilteredProductsTemplate } from './api.js';
+import { debounce } from './util.js'
 
+const searchInput = document.querySelector('input[name="product-keyword"]');
+const productsWrapper = document.querySelector('.products-inner');
 const selects = document.querySelectorAll('select');
 
 selects.forEach(select => {
@@ -16,16 +19,15 @@ const filter = {
   nosology: '',
   prescription: '',
   page: 1,
+  keyword: '',
 };
-
-const productsWrapper = document.querySelector('.products-inner');
 
 const productsWrapperClickHandler = (evt) => {
   if (evt.target.className === 'page-link') {
     evt.preventDefault();
 
     filter.page = evt.target.href.split('page=')[1];
-    
+
     getFilteredProductsTemplate(filter, (template) => {
       productsWrapper.innerHTML = template;
     });
@@ -41,6 +43,8 @@ const filterProducts = () => {
   filter.nosology = form.get('nosology');
   filter.prescription = form.get('prescription');
   filter.page = 1;
+  filter.keyword = '';
+  searchInput.value = '';
 
   getFilteredProductsTemplate(filter, (template) => {
     productsWrapper.innerHTML = template;
@@ -50,3 +54,15 @@ const filterProducts = () => {
 window.selectChangeHandler = () => {
   filterProducts();
 };
+
+
+const searchInputHandler = (evt) => {
+  filter.page = 1;
+  filter.keyword = evt.target.value;
+
+  getFilteredProductsTemplate(filter, (template) => {
+    productsWrapper.innerHTML = template;
+  });
+};
+
+searchInput.addEventListener('input', debounce(searchInputHandler));
