@@ -25,6 +25,7 @@
     @include('layouts.footer')
   </div>
 
+  <script src="{{ asset('pristine/pristine.min.js') }}"></script>
   <script src="{{ asset('glide/glide.min.js') }}"></script>
   <script src="{{ asset('bvselect/bvselect.js') }}"></script>
   <script src="{{ asset('js/main.js') }}"></script>

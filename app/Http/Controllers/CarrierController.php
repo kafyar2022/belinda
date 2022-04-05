@@ -2,17 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Helper;
+use App\Models\Vacancy;
 use Illuminate\Http\Request;
 
 class CarrierController extends Controller
 {
   public function index()
   {
-    return view('pages.carrier.index');
+    $page = Helper::getPage('carrier');
+    $page['vacancies'] = Vacancy::latest()->get();
+
+    return view('pages.carrier.index', compact('page'));
   }
 
-  public function apply()
+  public function apply($id)
   {
-    return view('pages.carrier.apply');
+    $vacancy = Vacancy::find($id);
+
+    return view('pages.carrier.apply', compact('vacancy'));
   }
 }

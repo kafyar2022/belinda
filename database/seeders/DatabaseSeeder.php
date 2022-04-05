@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
       ProductsSeeder::class,
       ClassificationSeeder::class,
       NosologySeeder::class,
+      VacancySeeder::class,
     ]);
   }
 }

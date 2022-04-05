@@ -119,7 +119,6 @@ body.apply footer {
   resize: none;
 }
 .form__textarea-limit {
-  content: "";
   position: absolute;
   right: 16px;
   bottom: 8px;
@@ -158,12 +157,25 @@ body.apply footer {
   padding-right: 24px;
   padding-left: 24px;
 }
+.char-count {
+  font-style: normal;
+}
 .form__aware {
   margin-top: 8px;
   margin-left: auto;
   color: #7A8085;
   text-align: right;
   white-space: pre-wrap;
+}
+.form__error {
+  color: #de3b21;
+  font-size: 12px;
+  position: absolute;
+  text-align: right;
+  width: 100%;
+  padding-right: 16px;
+  transform: translateY(-110%);
+  font-weight: 400;
 }
 
 /* <<= global styles */
@@ -1391,8 +1403,9 @@ body.apply footer {
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 1;
-  line-clamp: 1;
   -webkit-box-orient: vertical;
+  pointer-events: none;
+  user-select: none;
   max-width: 50%;
 }
 .sample-description-term__button {
