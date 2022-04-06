@@ -2,25 +2,40 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Helper;
+use App\Models\Newslifestyle;
 use Illuminate\Http\Request;
 
 class NewsLifestyleController extends Controller
 {
   public function index()
   {
-    return view('pages.newslifestyle.index');
+    $page = Helper::getPage('newslifestyle');
+    $page['newslifestyles'] = Newslifestyle::paginate(6);
+
+    return view('pages.newslifestyle.index', compact('page'));
   }
   public function news()
   {
-    return view('pages.newslifestyle.news');
+    $page = Helper::getPage('newslifestyle');
+    $page['news'] = Newslifestyle::where('type', 'news')->paginate(6);
+
+    return view('pages.newslifestyle.news', compact('page'));
   }
   public function lifestyle()
   {
-    return view('pages.newslifestyle.lifestyle');
+    $page = Helper::getPage('newslifestyle');
+    $page['lifestyles'] = Newslifestyle::where('type', 'lifestyle')->paginate(6);
+
+    return view('pages.newslifestyle.lifestyle', compact('page'));
   }
 
   public function show($id)
   {
-    return view('pages.newslifestyle.show');
+    $page = Helper::getPage('newslifestyle');
+    $page['newslifestyle'] = Newslifestyle::find($id);
+    $page['similars'] = Newslifestyle::where('type', $page['newslifestyle']->type)->get();
+
+    return view('pages.newslifestyle.show', compact('page'));
   }
 }

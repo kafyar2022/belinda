@@ -1595,6 +1595,18 @@ body.attention .container {
   margin-top: 32px;
   margin-bottom: 32px;
 }
+.newslifestyle-page nav {
+  grid-column: span 2;
+}
+.news-page nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 32px;
+}
+.newslifestyle-page .pagination {
+  justify-content: center;
+}
 .newslifestyle-list {
   list-style: none;
   display: grid;

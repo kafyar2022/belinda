@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
       ClassificationSeeder::class,
       NosologySeeder::class,
       VacancySeeder::class,
+      NewslifestyleSeeder::class,
     ]);
   }
 }

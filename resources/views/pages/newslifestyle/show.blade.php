@@ -5,20 +5,20 @@
 @section('content')
   <main class="newslifestyle-show-page">
     <div class="newslifestyle-show">
-      <img class="newslifestyle-show__img" src="{{asset('files/lifestyles/lifestyle.png')}}" alt="LOREN IPSUM SAMPLE TEXT">
+      <img class="newslifestyle-show__img" src="{{ asset('files/lifestyles/lifestyle.png') }}" alt="LOREN IPSUM SAMPLE TEXT">
       <div class="newslifestyle-show__inner">
-        <h1 class="newslifestyle-show__title">Lorem ipsum dolor sit amet consectetur</h1>
-        <time class="newslifestyle-show__datetime" datetime="2020-12-23">2020.12.23</time>
-        <p class="newslifestyle-show__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a...Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a...Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a...Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a...Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a...Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a...Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a...</p>
+        <h1 class="newslifestyle-show__title">{{ $page['newslifestyle']->title }}</h1>
+        <time class="newslifestyle-show__datetime" datetime="{{ $page['newslifestyle']->created_at }}">{{ $page['newslifestyle']->created_at->format('Y.m.d') }}</time>
+        <p class="newslifestyle-show__text">{{ $page['newslifestyle']->description }}</p>
       </div>
     </div>
 
     <div class="glide" data-type="carousel-half">
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
-          @foreach (range(1, 4) as $key)
+          @foreach ($page['similars'] as $newslifestyle)
             <li class="glide__slide">
-              <x-newslifestyle />
+              <x-newslifestyle :newslifestyle="$newslifestyle" />
             </li>
           @endforeach
         </ul>
@@ -32,5 +32,5 @@
 @endsection
 
 @section('scripts')
-  <script src="{{asset('js/newslifestyle.js')}}" type="module"></script>
+  <script src="{{ asset('js/newslifestyle.js') }}" type="module"></script>
 @endsection

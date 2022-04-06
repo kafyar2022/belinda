@@ -420,6 +420,30 @@ class TextSeeder extends Seeder
         'caption' => 'apply-now',
         'text' => 'Подать сейчас',
       ),
+      array(
+        'id' => 64,
+        'page' => 'newslifestyle',
+        'caption' => 'news-title',
+        'text' => 'Новости компании',
+      ),
+      array(
+        'id' => 65,
+        'page' => 'newslifestyle',
+        'caption' => 'lifestyle-title',
+        'text' => 'Образ жизни',
+      ),
+      array(
+        'id' => 66,
+        'page' => 'newslifestyle',
+        'caption' => 'company-news',
+        'text' => 'Новости компании',
+      ),
+      array(
+        'id' => 67,
+        'page' => 'newslifestyle',
+        'caption' => 'company-lifestyle',
+        'text' => 'Образ жизни',
+      ),
     );
 
     foreach ($texts as $text) {
