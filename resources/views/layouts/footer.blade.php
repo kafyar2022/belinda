@@ -18,24 +18,21 @@
     </div>
     <div class="footer-navigation-item">
       <dt>Популярные продукты</dt>
-      <dd><a href="">Образец текста</a></dd>
-      <dd><a href="">Образец текста</a></dd>
-      <dd><a href="">Образец текста</a></dd>
+      @foreach ($app['popular-products'] as $product)
+        <dd><a href="{{ route('products.show', $product->id) }}">{{ $product->title }}</a></dd>
+      @endforeach
     </div>
     <div class="footer-navigation-item">
       <dt>Популярные категории</dt>
-      <dd><a href="">Образец текста</a></dd>
-      <dd><a href="">Образец текста</a></dd>
-      <dd><a href="">Образец текста</a></dd>
-      <dd><a href="">Образец текста</a></dd>
-      <dd><a href="">Образец текста</a></dd>
+      @foreach ($app['popular-categories'] as $category)
+        <dd><a href="{{ route('products.index') }}">{{ $category->title }}</a></dd>
+      @endforeach
     </div>
     <div class="footer-navigation-item">
       <dt>Новости и образ жизни</dt>
-      <dd><a href="">Образец текста</a></dd>
-      <dd><a href="">Образец текста</a></dd>
-      <dd><a href="">Образец текста</a></dd>
-      <dd><a href="">Образец текста</a></dd>
+      @foreach ($app['newslifestyles'] as $newslifestyle)
+        <dd><a href="{{ route('newslifestyle.show', $newslifestyle->id) }}">{{ $newslifestyle->title }}</a></dd>
+      @endforeach
     </div>
   </dl>
 
@@ -45,28 +42,28 @@
       <div class="contacts-card-item">
         <dt>Адрес: </dt>
         <dd>
-          <a class="address" target="_blank">ул. Каххорова 111, Душанбе, Таджикистан</a>
+          <a class="address" target="_blank">{{$app['address']}}</a>
         </dd>
       </div>
       <div class="contacts-card-item">
         <dt>Тел: </dt>
         <dd>
-          <a href="tel:{{str_replace([' ', '(', ')', '-'],'', $app['phone'])}}">{{ $app['phone'] }}</a>
+          <a href="tel:{{ str_replace([' ', '(', ')', '-'], '', $app['phone']) }}">{{ $app['phone'] }}</a>
         </dd>
       </div>
       <div class="contacts-card-item">
         <dt>E-mail: </dt>
         <dd>
-          <a href="mailto:{{$app['email']}}">{{ $app['email'] }}</a>
+          <a href="mailto:{{ $app['email'] }}">{{ $app['email'] }}</a>
         </dd>
       </div>
     </dl>
     <ul class="socials">
       <li>
-        <a href="#" class="socials-link"><img src="{{asset('files/instagram.svg')}}" alt="Инстаграм"></a>
+        <a href="#" class="socials-link"><img src="{{ asset('files/instagram.svg') }}" alt="Инстаграм"></a>
       </li>
       <li>
-        <a href="#" class="socials-link"><img src="{{asset('files/facebook.svg')}}" alt="Фейсбук"></a>
+        <a href="#" class="socials-link"><img src="{{ asset('files/facebook.svg') }}" alt="Фейсбук"></a>
       </li>
     </ul>
   </section>
@@ -75,6 +72,6 @@
     <div class="logo-wrapper">
       <img class="main-logo" src="{{ asset('img/main-logo.svg') }}" alt="Логотип компании Belinda">
     </div>
-    <p class="copyright">{{$app['copyright']}}</p>
+    <p class="copyright">{{ $app['copyright'] }}</p>
   </div>
 </footer>

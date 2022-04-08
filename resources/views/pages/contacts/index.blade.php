@@ -6,52 +6,82 @@
   <main class="contacts-page">
     <div class="contacts-vitrin">
       <section class="contacts-card">
-        <h2>Контактная информация</h2>
+        <h2>{{ $page['contacts-title'] }}</h2>
         <dl>
           <div class="contacts-card-item">
-            <dt>Адрес: </dt>
-            <dd><a href="http://maps.google.com/?q=38.542405,68.773123'" class="address" target="_blank">ул. Каххорова 111, Душанбе, Таджикистан</a></dd>
+            <dt>{{ $page['address-term'] }}</dt>
+            <dd><a href="http://maps.google.com/?q=38.542405,68.773123'" class="address" target="_blank">{{ $page['address'] }}</a></dd>
           </div>
           <div class="contacts-card-item">
-            <dt>Тел: </dt>
-            <dd><a href="tel:+992918000000">+992 (918) 00-00-00</a></dd>
+            <dt>{{ $page['tel-term'] }}</dt>
+            <dd><a href="tel:+992918000000">{{ $page['tel'] }}</a></dd>
           </div>
           <div class="contacts-card-item">
-            <dt>E-mail: </dt>
-            <dd><a href="mailto:info@belinda.tj.com">info@belinda.tj.com</a></dd>
+            <dt>{{ $page['email-term'] }}</dt>
+            <dd><a href="mailto:info@belinda.tj.com">{{ $page['email'] }}</a></dd>
           </div>
         </dl>
         <ul class="socials">
-          <li><a href="#" class="socials-link"><img src="{{asset('files/instagram.svg')}}" alt="Инстаграм"></a></li>
-          <li><a href="#" class="socials-link"><img src="{{asset('files/facebook.svg')}}" alt="Фейсбук"></a></li>
+          <li><a href="#" class="socials-link"><img src="{{ asset('files/instagram.svg') }}" alt="Инстаграм"></a></li>
+          <li><a href="#" class="socials-link"><img src="{{ asset('files/facebook.svg') }}" alt="Фейсбук"></a></li>
         </ul>
       </section>
-      
+
       <form class="form sample-wrapper sample-wrapper--dark">
         @csrf
         <fieldset class="form__group">
-          <legend class="form__title sample-wrapper__title sample-wrapper__title--big">Свяжитесь с нами через онлайн форму</legend>
+          <legend class="form__title sample-wrapper__title sample-wrapper__title--big">{{ $page['contact-us'] }}</legend>
           <p class="form__item">
-            <label class="visually-hidden" for="name">Имя</label>
-            <input class="form__input" type="text" name="name" id="name" placeholder="Имя">
+            <label class="visually-hidden" for="name">{{ $page['form-name'] }}</label>
+            <input
+              class="form__input"
+              id="name"
+              type="text"
+              name="name"
+              placeholder="Имя"
+              required
+              data-pristine-required-message="Объязательное поле"
+            >
           </p>
           <p class="form__item">
-            <label for="email" class="visually-hidden">Электронная почта</label>
-            <input type="email" class="form__input" name="email" id="email" placeholder="E-mail">
+            <label for="email" class="visually-hidden">{{ $page['form-email'] }}</label>
+            <input
+              class="form__input"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="E-mail"
+              required
+              data-pristine-required-message="Объязательное поле"
+              data-pristine-email-message="E-mail не является допустимым"
+            >
           </p>
           <p class="form__item">
-            <label for="phone" class="visually-hidden">Телефон</label>
-            <input type="tel" class="form__input" id="phone" name="phone" placeholder="Телефон">
+            <label for="phone" class="visually-hidden">{{ $page['form-tel'] }}</label>
+            <input
+              class="form__input"
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Телефон"
+              required
+              data-pristine-required-message="Объязательное поле"
+            >
           </p>
           <p class="form__item">
-            <label for="message" class="visually-hidden">Почему мы должны выбрать вас</label>
-            <textarea class="form__textarea" name="message" id="message" placeholder="Почему мы должны выбрать вас"></textarea>
-            <i class="form__textarea-limit">140 букв</i>
+            <label for="message" class="visually-hidden">{{ $page['enter-msg'] }}</label>
+            <textarea
+              class="form__textarea"
+              name="message"
+              id="message"
+              placeholder="{{ $page['enter-msg'] }}"
+              required
+              data-pristine-required-message="Объязательное поле"
+            ></textarea>
           </p>
         </fieldset>
         <div class="form__footer">
-          <p class="form__aware">Нажимая кнопку отправить, вы соглашаетесь на
-обработку ваших персональных данных.</p>
+          <p class="form__aware">{{ $page['form-aware'] }}</p>
           <button class="form__submit-btn red-link" style="margin-left: 32px" type="submit">Отправить</button>
         </div>
       </form>
@@ -62,20 +92,20 @@
     </div>
 
     <section class="global-presence">
-      <h2 class="global-presence__title sample-title">Глобальное присутствие</h2>
+      <h2 class="global-presence__title sample-title">{{ $page['global-presence'] }}</h2>
       <div class="global-presence__carousel">
         <div class="glide" data-type="carousel">
           <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides">
-              @foreach (range(1, 4) as $key)
-              <li class="glide__slide">
-                <a class="site-item sample-wrapper" href="https://belinda.tj" target="_blank">
-                  <div class="site-item__inner">
-                    <h3 class="sample-wrapper__title">Таджикистан</h3>
-                    <cite class="site-item__url">www.belinda.tj</cite>
-                  </div>
-                </a>
-              </li>
+              @foreach ($page['sites'] as $site)
+                <li class="glide__slide">
+                  <a class="site-item sample-wrapper" href="{{ $site->site }}" target="_blank">
+                    <div class="site-item__inner">
+                      <h3 class="sample-wrapper__title">{{ $site->title }}</h3>
+                      <cite class="site-item__url">{{ $site->site }}</cite>
+                    </div>
+                  </a>
+                </li>
               @endforeach
             </ul>
           </div>
@@ -87,4 +117,8 @@
       </div>
     </section>
   </main>
+@endsection
+
+@section('scripts')
+  <script src="{{ asset('js/contacts.js') }}" type="module"></script>
 @endsection

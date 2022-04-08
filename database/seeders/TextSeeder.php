@@ -444,6 +444,96 @@ class TextSeeder extends Seeder
         'caption' => 'company-lifestyle',
         'text' => 'Образ жизни',
       ),
+      array(
+        'id' => 68,
+        'page' => 'contacts',
+        'caption' => 'contacts-title',
+        'text' => 'Контактная информация',
+      ),
+      array(
+        'id' => 69,
+        'page' => 'contacts',
+        'caption' => 'address-term',
+        'text' => 'Адрес: ',
+      ),
+      array(
+        'id' => 70,
+        'page' => 'contacts',
+        'caption' => 'address',
+        'text' => 'ул. Каххорова 111, Душанбе, Таджикистан',
+      ),
+      array(
+        'id' => 71,
+        'page' => 'contacts',
+        'caption' => 'tel-term',
+        'text' => 'Тел: ',
+      ),
+      array(
+        'id' => 72,
+        'page' => 'contacts',
+        'caption' => 'tel',
+        'text' => '+992 (918) 00-00-00',
+      ),
+      array(
+        'id' => 73,
+        'page' => 'contacts',
+        'caption' => 'email-term',
+        'text' => 'E-mail: ',
+      ),
+      array(
+        'id' => 74,
+        'page' => 'contacts',
+        'caption' => 'email',
+        'text' => 'email',
+      ),
+      array(
+        'id' => 75,
+        'page' => 'contacts',
+        'caption' => 'contact-us',
+        'text' => 'Свяжитесь с нами через онлайн форму',
+      ),
+      array(
+        'id' => 76,
+        'page' => 'contacts',
+        'caption' => 'form-name',
+        'text' => 'Имя',
+      ),
+      array(
+        'id' => 77,
+        'page' => 'contacts',
+        'caption' => 'form-email',
+        'text' => 'Электронная почта',
+      ),
+      array(
+        'id' => 78,
+        'page' => 'contacts',
+        'caption' => 'form-tel',
+        'text' => 'Телефон',
+      ),
+      array(
+        'id' => 79,
+        'page' => 'contacts',
+        'caption' => 'enter-msg',
+        'text' => 'Введите ваше сообщение здесь...',
+      ),
+      array(
+        'id' => 80,
+        'page' => 'contacts',
+        'caption' => 'form-aware',
+        'text' => 'Нажимая кнопку отправить, вы соглашаетесь на обработку ваших персональных данных.',
+      ),
+      array(
+        'id' => 81,
+        'page' => 'contacts',
+        'caption' => 'global-presence',
+        'text' => 'Глобальное присутствие',
+      ),
+      array(
+        'id' => 82,
+        'page' => null,
+        'caption' => 'address',
+        'text' => 'ул. Каххорова 111, Душанбе, Таджикистан'
+      ),
     );
 
     foreach ($texts as $text) {

@@ -132,6 +132,9 @@ body.apply footer {
   flex-wrap: wrap;
   margin-top: 32px;
 }
+.contacts-page .form__footer {
+  flex-wrap: nowrap;
+}
 .form__file-label {
   display: flex;
   align-items: center;
@@ -1105,6 +1108,9 @@ body.apply footer {
 }
 .mission-vision-item:last-child:before {
   background-image: url("../img/mission-vision-3.svg");
+}
+.contacts-page .global-presence__title {
+  margin-top: 32px;
 }
 .global-presence__title {
   margin-bottom: 32px;
