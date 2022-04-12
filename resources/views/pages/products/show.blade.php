@@ -14,7 +14,7 @@
         <img class="product__img" src="{{ asset('files/products/dorsob.png') }}" alt="{{ $page['product']->title }}">
       </div>
       <p class="product__category">{{ $page['product']->prescription }}</p>
-      <a class="product__download-link" href="{{route('products.download_instruction')}}?id={{$page['product']->id}}">{{ $app['download-instructions'] }}</a>
+      <a class="product__download-link" href="{{route('products.download_instruction')}}?slug={{$page['product']->slug}}">{{ $app['download-instructions'] }}</a>
     </figure>
 
     <dl class="products-show-page__info accordion" data-type="accordion">
@@ -69,7 +69,7 @@
     </section>
 
     <section class="products-show-page__popular popular-products">
-      <h2 class="popular-products__title sample-title">{{ $app['popular-products'] }}</h2>
+      <h2 class="popular-products__title sample-title">{{ $app['popular-products-title'] }}</h2>
       <div class="glide" data-type="carousel">
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">

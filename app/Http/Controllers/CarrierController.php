@@ -16,9 +16,9 @@ class CarrierController extends Controller
     return view('pages.carrier.index', compact('page'));
   }
 
-  public function apply($id)
+  public function apply($slug)
   {
-    $vacancy = Vacancy::find($id);
+    $vacancy = Vacancy::where('slug', $slug)->first($slug);
 
     return view('pages.carrier.apply', compact('vacancy'));
   }

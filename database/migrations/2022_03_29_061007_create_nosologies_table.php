@@ -16,6 +16,7 @@ class CreateNosologiesTable extends Migration
     Schema::create('nosologies', function (Blueprint $table) {
       $table->id();
       $table->string('title');
+      $table->string('slug')->unique();
       $table->timestamps();
     });
   }

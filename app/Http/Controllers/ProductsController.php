@@ -72,7 +72,7 @@ class ProductsController extends Controller
     if (!session()->has('aware')) {
       return redirect(route('products.attention'));
     }
-    $page['product'] = Product::find($request->id);
+    $page['product'] = Product::where('slug', $request->slug)->first();
 
     $page['similar-products'] = Product::where('nosology_id', $page['product']->nosology_id)
       ->orWhere('classification_id', $page['product']->classification_id)
@@ -85,7 +85,7 @@ class ProductsController extends Controller
 
   public function downloadInstruction(Request $request)
   {
-    $product = Product::find($request->id);
+    $product = Product::where('slug', $request->slug)->first();
 
     if (!$product->filename) {
       return back();

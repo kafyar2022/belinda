@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Classification;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Database\Seeder;
 
 class ClassificationSeeder extends Seeder
@@ -56,6 +57,7 @@ class ClassificationSeeder extends Seeder
     foreach ($classifications as $classification) {
       $table = new Classification();
       $table->title = $classification['title'];
+      $table->slug = SlugService::createSlug(Classification::class, 'slug', $table->title);
       $table->save();
     }
   }

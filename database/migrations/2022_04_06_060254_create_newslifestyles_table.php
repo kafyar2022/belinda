@@ -16,7 +16,8 @@ class CreateNewslifestylesTable extends Migration
     Schema::create('newslifestyles', function (Blueprint $table) {
       $table->id();
       $table->string('title');
-      $table->text('description');
+      $table->string('slug')->unique();
+      $table->text('description')->nullable();
       $table->string('type');
       $table->timestamps();
     });

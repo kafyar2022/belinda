@@ -15,15 +15,16 @@ class CreateProductsTable extends Migration
   {
     Schema::create('products', function (Blueprint $table) {
       $table->id();
+      $table->string('title');
+      $table->string('slug')->unique();
       $table->integer('nosology_id')->nullable();
       $table->integer('classification_id')->nullable();
-      $table->string('title');
-      $table->string('prescription');
-      $table->text('description');
-      $table->text('composition')->default('...');
-      $table->text('indications')->default('...');
-      $table->text('mode')->default('...');
-      $table->string('picture');
+      $table->string('prescription')->nullable();
+      $table->text('description')->nullable();
+      $table->text('composition')->nullable();
+      $table->text('indications')->nullable();
+      $table->text('mode')->nullable();
+      $table->string('photo')->nullable();
       $table->string('filename')->nullable();
       $table->timestamps();
     });

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Nosology;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Database\Seeder;
 
 class NosologySeeder extends Seeder
@@ -55,6 +56,7 @@ class NosologySeeder extends Seeder
     foreach ($nosologies as $nosology) {
       $table = new Nosology();
       $table->title = $nosology['title'];
+      $table->slug = SlugService::createSlug(Nosology::class, 'slug', $table->title);
       $table->save();
     }
   }

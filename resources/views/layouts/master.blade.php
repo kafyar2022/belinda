@@ -29,6 +29,9 @@
   <script src="{{ asset('glide/glide.min.js') }}"></script>
   <script src="{{ asset('bvselect/bvselect.js') }}"></script>
   <script src="{{ asset('js/main.js') }}"></script>
+  @if (session()->has('admin'))
+    <script src="{{ asset('js/dashboard.js') }}" type="module"></script>
+  @endif
   @yield('scripts')
 </body>
 

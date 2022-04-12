@@ -30,10 +30,10 @@ class NewsLifestyleController extends Controller
     return view('pages.newslifestyle.lifestyle', compact('page'));
   }
 
-  public function show($id)
+  public function show($slug)
   {
     $page = Helper::getPage('newslifestyle');
-    $page['newslifestyle'] = Newslifestyle::find($id);
+    $page['newslifestyle'] = Newslifestyle::where('slug', $slug)->first();
     $page['similars'] = Newslifestyle::where('type', $page['newslifestyle']->type)->get();
 
     return view('pages.newslifestyle.show', compact('page'));

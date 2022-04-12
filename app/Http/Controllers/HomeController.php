@@ -15,4 +15,9 @@ class HomeController extends Controller
 
     return view('pages.home.index', compact('page'));
   }
+
+  public function search(Request $request)
+  {
+    // 
+  }
 }
