@@ -49,6 +49,6 @@ Route::group(['middleware' => ['AuthCheck']], function () {
   Route::get('/auth/login', [AuthController::class, 'login'])->name('auth.login');
 
   Route::group(['middleware' => ['AdminCheck']], function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard'); 
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
   });
 });

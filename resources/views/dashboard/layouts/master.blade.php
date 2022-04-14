@@ -15,8 +15,9 @@
   {{-- Simditor styles --}}
   <link rel="stylesheet" href="{{ asset('simditor/simditor.css') }}">
   {{-- App Styles --}}
-  <link rel="stylesheet" href="{{ mix('css/dashboard.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
 </head>
+
 
 <body class="body">
   <div class="modal modal--fail {{ session()->has('fail') ? '' : 'hidden' }}">{{ session()->get('fail') }}</div>
@@ -44,7 +45,7 @@
   <script src="{{ asset('simditor/uploader.js') }}"></script>
   <script src="{{ asset('simditor/simditor.js') }}"></script>
   {{-- App Scripts --}}
-  <script src="{{ mix('js/dashboard.js') }}"></script>
+  <script src="{{ asset('js/dashboard.js') }}"></script>
 </body>
 
 </html>

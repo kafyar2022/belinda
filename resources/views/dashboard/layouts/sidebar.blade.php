@@ -1,18 +1,19 @@
-<aside class="sidebar">
-  <nav class="main-navigation">
-    <ul class="page-navigation">
-      <li class="page-navigation-item">
-        <a class="page-navigation-link home" target="_blank" href="{{ route('home') }}">Главная</a>
-      </li>
-      <li class="page-navigation-item">
-        <a class="page-navigation-link products" href="{{ route('dashboard') }}">Продукты</a>
-      </li>
-      <li class="page-navigation-item">
-        <a class="page-navigation-link news" href="{{ route('dashboard.news') }}">Новости</a>
-      </li>
-      <li class="page-navigation-item">
-        <a class="page-navigation-link logout" href="{{ route('auth.logout') }}">Выход</a>
-      </li>
-    </ul>
-  </nav>
-</aside>
+<nav class="main-navigation">
+  <ul class="page-navigation">
+    <li class="page-navigation-item">
+      <a class="page-navigation-link" target="_blank" href="{{ route('home.index') }}">Главная</a>
+    </li>
+    <li class="page-navigation-item">
+      <a class="page-navigation-link" href="#">Продукты</a>
+    </li>
+    <li class="page-navigation-item">
+      <a class="page-navigation-link" href="#">Новости и образ жизни</a>
+    </li>
+    <li class="page-navigation-item">
+      <a class="page-navigation-link" href="#">Карьера</a>
+    </li>
+    <li class="page-navigation-item">
+      <a class="page-navigation-link" href="{{ route('auth.logout') }}">Выход</a>
+    </li>
+  </ul>
+</nav>
