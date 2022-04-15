@@ -27,7 +27,7 @@
             </dt>
             <dd class="accordion__body">
               <div class="sample-description-definition">{{$vacancy->description}}</div>
-              <a class="vacancies__link red-link" href="{{ route('carrier.apply', $vacancy->id) }}">{{$page['apply-now']}}</a>
+              <a class="vacancies__link red-link" href="{{ route('carrier.apply', $vacancy->slug) }}">{{$page['apply-now']}}</a>
             </dd>
           @endforeach
         </dl>

@@ -1,6 +1,10 @@
+import './global-search.js';
+
 const header = document.querySelector('.header');
 const menu = document.querySelector('.menu');
 const menuBtn = header.querySelector('.menu-button');
+const hamburgerEl = document.querySelector('.hamburger');
+const mobileNavigationEl = document.querySelector('.mob-nav');
 
 menuBtn.addEventListener('click', () => {
   header.classList.toggle('menu--shown');
@@ -21,6 +25,11 @@ searchInput.addEventListener('input', () => {
 searchInput.addEventListener('focusout', () => {
   searchInput.setAttribute('size', searchInput.getAttribute('placeholder').length);
   searchInput.value = '';
+  document.querySelector('.search-result-holder').innerHTML = '';
+});
+
+hamburgerEl.addEventListener('click', () => {
+  header.classList.toggle('mobile-menu');
 });
 
 const glide = document.querySelector('[data-type="carousel"]');
@@ -30,5 +39,15 @@ if (glide) {
     perView: 4,
     gap: 32,
     autoplay: 3000,
+    breakpoints: {
+      1399: {
+        perView: 3,
+        gap: 24
+      },
+      991: {
+        perView: 2,
+        gap: 16
+      }
+    }
   }).mount()
 }
