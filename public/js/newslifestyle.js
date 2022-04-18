@@ -5,5 +5,19 @@ if (halfGlide) {
     perView: 2,
     gap: 32,
     autoplay: 3000,
+    breakpoints: {
+      1399: {
+        perView: 2,
+        gap: 24
+      },
+      991: {
+        perView: 2,
+        gap: 16
+      },
+      575: {
+        perView: 1,
+        gap: 16
+      }
+    }
   }).mount()
 }

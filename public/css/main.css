@@ -2296,6 +2296,18 @@ body.attention .container {
   .home-page__product-wrapper {
     gap: 24px;
   }
+
+  .products-show-page {
+    grid-template-areas: "card card card card"
+      "card card card card"
+      "description description similar similar"
+      "info info info info"
+      "popular popular popular popular";
+  }
+
+  .product {
+    height: 540px;
+  }
 }
 
 /* tablet */
@@ -2549,8 +2561,20 @@ body.attention .container {
   .contacts-page .global-presence__title {
     margin-top: 16px;
   }
+
   .contacts-page .global-presence__carousel {
     margin-bottom: 0;
+  }
+  .products-show-page__similar {
+    display: none;
+  }
+  .products-show-page {
+    grid-template-areas:
+      "card card card card"
+      "card card card card"
+      "description description description description"
+      "info info info info"
+      "popular popular popular popular";
   }
 }
 
@@ -2560,6 +2584,72 @@ body.attention .container {
 @media screen and (max-width: 575px) {
   .container {
     max-width: 360px;
+  }
+
+  .search-result-page {
+    display: none;
+  }
+
+  .home-page {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .home-page>*:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .home-page__product-wrapper::after {
+    display: none;
+  }
+
+  .footer-navigation-item:nth-of-type(4) {
+    display: none;
+  }
+
+  .search-label {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .products-list {
+    grid-template-columns: 1fr;
+  }
+
+  .sample-description-term__title {
+    width: 100%;
+    margin-right: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .sample-description-term__subtitle {
+    display: none;
+  }
+
+  .apply {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .newslifestyle-page,
+  .newslifestyle-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .sample-wrapper__title--big {
+    font-size: 32px;
+  }
+
+  .contacts-vitrin form {
+    padding: 16px;
+  }
+
+  .newslifestyle-show {
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 

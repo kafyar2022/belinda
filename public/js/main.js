@@ -47,6 +47,10 @@ if (glide) {
       991: {
         perView: 2,
         gap: 16
+      },
+      575: {
+        perView: 1,
+        gap: 16
       }
     }
   }).mount()
