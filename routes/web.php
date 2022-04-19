@@ -50,6 +50,15 @@ Route::group(['middleware' => ['AuthCheck']], function () {
   Route::get('/auth/login', [AuthController::class, 'login'])->name('auth.login');
 
   Route::group(['middleware' => ['AdminCheck']], function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+    Route::prefix('dashboard')->group(function () {
+      Route::get('/', [DashboardController::class, 'products'])->name('dashboard.products');
+      Route::get('/newslifestyle', [DashboardController::class, 'newslifestyle'])->name('dashboard.newslifestyle');
+      Route::get('/carrier', [DashboardController::class, 'carrier'])->name('dashboard.carrier');
+
+      Route::post('/product-store', [ProductsController::class, 'store'])->name('products.store');
+      Route::get('/product-edit/{id}', [ProductsController::class, 'edit'])->name('products.edit');
+      Route::post('/product-update', [ProductsController::class, 'update'])->name('products.update');
+      Route::get('/product-delete', [ProductsController::class, 'delete'])->name('products.delete');
+    });
   });
 });

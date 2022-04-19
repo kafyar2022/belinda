@@ -2565,9 +2565,11 @@ body.attention .container {
   .contacts-page .global-presence__carousel {
     margin-bottom: 0;
   }
+
   .products-show-page__similar {
     display: none;
   }
+
   .products-show-page {
     grid-template-areas:
       "card card card card"

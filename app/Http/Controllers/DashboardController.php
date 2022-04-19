@@ -2,12 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Classification;
+use App\Models\Nosology;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-  public function index()
+  public function products()
   {
-    return view('dashboard.pages.index');
+    $data['products'] = Product::select('id', 'title', 'created_at')->orderBy('created_at', 'desc')->get();
+    $data['nosology'] = Nosology::get();
+    $data['classification'] = Classification::get();
+
+    return view('dashboard.pages.products.index', compact('data'));
+  }
+
+  public function newslifestyle()
+  {
+    return view('dashboard.pages.newslifestyle.index');
+  }
+
+  public function carrier()
+  {
+    return view('dashboard.pages.carrier.index');
   }
 }

@@ -23,7 +23,7 @@ class AuthController extends Controller
 
     if (Hash::check(request('password'), $user->password)) {
       $request->session()->put('loggedUser', $user->id);
-      return redirect(route('dashboard.index'));
+      return redirect(route('dashboard.products'));
     } else {
       return back()->with('fail', 'Неверный пароль');
     }

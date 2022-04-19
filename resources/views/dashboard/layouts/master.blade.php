@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-<head>
+<head class="page">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -19,21 +19,9 @@
 </head>
 
 
-<body class="body">
-  <div class="modal modal--fail {{ session()->has('fail') ? '' : 'hidden' }}">{{ session()->get('fail') }}</div>
-  <div class="modal modal--success {{ session()->has('success') ? '' : 'hidden' }}">{{ session()->get('success') }}</div>
+<body class="page-body">
 
-  @if ($errors->any())
-    <div class="modal modal--fail">
-      <ul class="form-errors">
-        @foreach ($errors->all() as $error)
-          <li class="form-errors__item">{{ $error }}</li>
-        @endforeach
-      </ul>
-    </div>
-  @endif
-
-  @include('dashboard.layouts.sidebar')
+  @include('dashboard.layouts.header')
 
   @yield('content')
 
@@ -45,7 +33,7 @@
   <script src="{{ asset('simditor/uploader.js') }}"></script>
   <script src="{{ asset('simditor/simditor.js') }}"></script>
   {{-- App Scripts --}}
-  <script src="{{ asset('js/dashboard.js') }}"></script>
+  @yield('script')
 </body>
 
 </html>

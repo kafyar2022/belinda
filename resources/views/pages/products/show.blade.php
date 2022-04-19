@@ -11,10 +11,10 @@
 
     <figure class="products-show-page__product product">
       <div class="product__img-wrapper">
-        <img class="product__img" src="{{ asset('files/products/dorsob.png') }}" alt="{{ $page['product']->title }}">
+        <img class="product__img" src="{{ asset('files/products/img/' . $page['product']->photo) }}" alt="{{ $page['product']->title }}">
       </div>
       <p class="product__category">{{ $page['product']->prescription }}</p>
-      <a class="product__download-link" href="{{route('products.download_instruction')}}?slug={{$page['product']->slug}}">{{ $app['download-instructions'] }}</a>
+      <a class="product__download-link" href="{{ route('products.download_instruction') }}?slug={{ $page['product']->slug }}">{{ $app['download-instructions'] }}</a>
     </figure>
 
     <dl class="products-show-page__info accordion" data-type="accordion">
@@ -85,7 +85,7 @@
           <button class="glide__arrow glide__arrow--right" data-glide-dir=">"></button>
         </div>
       </div>
-      <a class="popular-products__link red-link" href="{{ route('products.index') }}">{{$app['back-to-products']}}</a>
+      <a class="popular-products__link red-link" href="{{ route('products.index') }}">{{ $app['back-to-products'] }}</a>
     </section>
   </main>
 @endsection

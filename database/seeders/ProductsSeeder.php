@@ -18,13 +18,12 @@ class ProductsSeeder extends Seeder
   {
     $faker = Faker::create('ru_RU');
 
-    foreach (range(1, 500) as $value) {
+    foreach (range(1, 50) as $value) {
       $table = new Product();
       $table->photo = 'product.png';
       $table->nosology_id = $faker->numberBetween($min = 1, $max = 9);
       $table->classification_id = $faker->numberBetween($min = 1, $max = 9);
       $table->prescription = 'OTC';
-      $table->filename = 'default.pdf';
       $table->title = 'Dorsob-T';
       $table->slug = SlugService::createSlug(Product::class, 'slug', 'Dorsob-T');
       $table->description = 'Cостоит из двух компонентов: дорзоламида гидрохлорида и тимолола малеата. Каждый из этих двух компонентов снижает повышенное внутриглазное давление за счет уменьшения секреции внутриглазной жидкости, но делает это посредством разных механизмов действия.';

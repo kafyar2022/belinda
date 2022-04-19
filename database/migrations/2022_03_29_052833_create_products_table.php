@@ -25,7 +25,7 @@ class CreateProductsTable extends Migration
       $table->text('indications')->nullable();
       $table->text('mode')->nullable();
       $table->string('photo')->nullable();
-      $table->string('filename')->nullable();
+      $table->string('instruction')->nullable();
       $table->timestamps();
     });
   }

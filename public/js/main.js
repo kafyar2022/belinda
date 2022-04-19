@@ -4,7 +4,6 @@ const header = document.querySelector('.header');
 const menu = document.querySelector('.menu');
 const menuBtn = header.querySelector('.menu-button');
 const hamburgerEl = document.querySelector('.hamburger');
-const mobileNavigationEl = document.querySelector('.mob-nav');
 
 menuBtn.addEventListener('click', () => {
   header.classList.toggle('menu--shown');

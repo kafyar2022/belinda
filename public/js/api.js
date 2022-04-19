@@ -8,12 +8,7 @@ const getFilteredProductsTemplate = (filter, onSuccess) => {
     method: 'post',
     body: JSON.stringify(filter),
   })
-    .then((response) => {
-      if (response.ok) {
-        return response.json()
-      }
-      throw new Error();
-    })
+    .then((response) => response.json())
     .then((response) => {
       onSuccess(response.template);
     })
@@ -24,17 +19,15 @@ const getFilteredProductsTemplate = (filter, onSuccess) => {
 
 const getSearchResult = (keyword, onSuccess) =>
   fetch(`/search?keyword=${keyword}`)
-  .then((response) => {
-    if (response.ok) {
-      return response.json();
-    }
-    throw new Error();
-  })
-  .then((result) => {
-    onSuccess(result.template);
-  })
-  .catch((err) => {
-    console.error(err);
-  });
+    .then((response) => response.json())
+    .then((result) => {
+      onSuccess(result.template);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
 
-export { getFilteredProductsTemplate, getSearchResult };
+export {
+  getFilteredProductsTemplate,
+  getSearchResult,
+};

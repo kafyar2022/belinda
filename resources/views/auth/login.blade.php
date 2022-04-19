@@ -11,8 +11,112 @@
   <meta name="yandex" content="none">
   <title>Вход | Spey - международная фармацевтическая компания</title>
 
-  <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
 </head>
+<style>
+  .login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .login-form {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 6px 12px rgb(0 0 0 / 15%);
+    padding-top: 30px;
+    padding-right: 25px;
+    padding-bottom: 30px;
+    padding-left: 75px;
+    position: relative;
+    max-width: 700px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .login-fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .login-legend {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 17.5px;
+    position: absolute;
+    top: -40px;
+    left: 0px;
+  }
+
+  .login-label {
+    border-radius: 15px;
+    display: flex;
+    height: 50px;
+    border: 1px solid #707070;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    padding-left: 25px;
+  }
+
+  .login-input {
+    border: none;
+    flex-grow: 1;
+    font-size: 18px;
+  }
+
+  .login-input:focus {
+    outline: none;
+  }
+
+  .login-eye-btn {
+    display: flex;
+    height: 100%;
+    border: none;
+    width: 48px;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: #707070;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .visible-icon {
+    display: block;
+  }
+
+  .login-eye-btn.show .visible-icon {
+    display: none;
+  }
+
+  .invisible-icon {
+    display: none;
+  }
+
+  .login-eye-btn.show .invisible-icon {
+    display: block;
+  }
+
+  .login-submit-btn {
+    min-width: 200px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-left: auto;
+    border-radius: 16px;
+    height: 50px;
+    transition: 0.3s;
+  }
+
+  .login-submit-btn:hover {
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 15%);
+  }
+
+</style>
 
 <body>
   <div class="modal modal--fail {{ session()->has('fail') ? '' : 'hidden' }}">{{ session()->get('fail') }}</div>
@@ -40,10 +144,22 @@
       </fieldset>
       <button class="button login-submit-btn" type="submit">Войти</button>
     </form>
-    @if (session()->has('fail'))
-      <div class="modal">{{ session()->get('fail') }}</div>
-    @endif
   </main>
+
+  <script>
+    const visibilityBtn = document.querySelector('.login-eye-btn'),
+      passwordInput = documents.querySelector('#password');
+
+    visibilityBtn.onclick = () => {
+      if (visibilityBtn.classList.contains('show')) {
+        visibilityBtn.classList.remove('show');
+        passwordInput.setAttribute('type', 'password');
+      } else {
+        visibilityBtn.classList.add('show');
+        passwordInput.setAttribute('type', 'text');
+      }
+    };
+  </script>
 </body>
 
 </html>
