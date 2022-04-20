@@ -17,6 +17,7 @@ class CreateNewslifestylesTable extends Migration
       $table->id();
       $table->string('title');
       $table->string('slug')->unique();
+      $table->string('img')->nullable();
       $table->text('description')->nullable();
       $table->string('type');
       $table->timestamps();

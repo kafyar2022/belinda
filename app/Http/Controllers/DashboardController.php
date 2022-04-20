@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Classification;
+use App\Models\Newslifestyle;
 use App\Models\Nosology;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -20,7 +21,9 @@ class DashboardController extends Controller
 
   public function newslifestyle()
   {
-    return view('dashboard.pages.newslifestyle.index');
+    $data['newslifestyles'] = Newslifestyle::select('id', 'title', 'created_at')->orderBy('created_at', 'desc')->get();
+
+    return view('dashboard.pages.newslifestyle.index', compact('data'));
   }
 
   public function carrier()

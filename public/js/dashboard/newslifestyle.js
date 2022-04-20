@@ -2,21 +2,19 @@ import { debounce } from '../util.js';
 
 const addFormShowEl = document.querySelector('.add-action');
 const addFormCloseEl = document.querySelector('.form__close');
-const addFormEl = document.querySelector('.product-add-form');
+const addFormEl = document.querySelector('.newslifestyle-add-form');
 const photoPreviewEl = document.querySelector('.form__photo-preview');
-const photoChooserEl = document.querySelector('input[name="photo"]');
-const fileChooserEl = document.querySelector('input[name="instruction"]');
-const filePreviewEl = document.querySelector('label[for="instruction"]');
+const photoChooserEl = document.querySelector('input[name="img"]');
 const searchFieldEl = document.querySelector('input[type="search"]');
 const productTitleEls = document.querySelectorAll('.data-list__title');
 
 function showAddForm() {
-  addFormEl.classList.remove('product-add-form--hidden');
+  addFormEl.classList.remove('newslifestyle-add-form--hidden');
   addFormCloseEl.addEventListener('click', hideAddForm);
 };
 
 function hideAddForm() {
-  addFormEl.classList.add('product-add-form--hidden');
+  addFormEl.classList.add('newslifestyle-add-form--hidden');
   addFormCloseEl.removeEventListener('click', hideAddForm);
 };
 
@@ -27,15 +25,9 @@ photoChooserEl.addEventListener('change', (evt) => {
   photoPreviewEl.src = URL.createObjectURL(file);
 });
 
-fileChooserEl.addEventListener('change', (evt) => {
-  filePreviewEl.textContent = evt.target.value;
-});
-
 addFormEl.addEventListener('reset', () => {
   photoPreviewEl.src = photoPreviewEl.dataset.src;
   photoChooserEl.value = '';
-  fileChooserEl.value = '';
-  filePreviewEl.textContent = 'Загрузить инструкцию';
 });
 
 searchFieldEl.addEventListener('input', debounce((evt) => {

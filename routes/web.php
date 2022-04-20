@@ -55,10 +55,15 @@ Route::group(['middleware' => ['AuthCheck']], function () {
       Route::get('/newslifestyle', [DashboardController::class, 'newslifestyle'])->name('dashboard.newslifestyle');
       Route::get('/carrier', [DashboardController::class, 'carrier'])->name('dashboard.carrier');
 
-      Route::post('/product-store', [ProductsController::class, 'store'])->name('products.store');
       Route::get('/product-edit/{id}', [ProductsController::class, 'edit'])->name('products.edit');
-      Route::post('/product-update', [ProductsController::class, 'update'])->name('products.update');
       Route::get('/product-delete', [ProductsController::class, 'delete'])->name('products.delete');
+      Route::post('/product-store', [ProductsController::class, 'store'])->name('products.store');
+      Route::post('/product-update', [ProductsController::class, 'update'])->name('products.update');
+
+      Route::get('/newslifestyle-edit/{id}', [NewsLifestyleController::class, 'edit'])->name('newslifestyle.edit');
+      Route::get('/newslifestyle-delete', [NewsLifestyleController::class, 'delete'])->name('newslifestyle.delete');
+      Route::post('/newslifestyle-store', [NewsLifestyleController::class, 'store'])->name('newslifestyle.store');
+      Route::post('/newslifestyle-update', [NewsLifestyleController::class, 'update'])->name('newslifestyle.update');
     });
   });
 });
