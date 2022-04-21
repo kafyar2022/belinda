@@ -14,7 +14,9 @@
         <img class="product__img" src="{{ asset('files/products/img/' . $page['product']->photo) }}" alt="{{ $page['product']->title }}">
       </div>
       <p class="product__category">{{ $page['product']->prescription }}</p>
-      <a class="product__download-link" href="{{ route('products.download_instruction') }}?slug={{ $page['product']->slug }}">{{ $app['download-instructions'] }}</a>
+      @if ($page['product']->instruction)
+        <a class="product__download-link" href="{{ route('products.download_instruction') }}?slug={{ $page['product']->slug }}">{{ $app['download-instructions'] }}</a>
+      @endif
     </figure>
 
     <dl class="products-show-page__info accordion" data-type="accordion">
