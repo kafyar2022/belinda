@@ -20,6 +20,8 @@ class CreateApplicationsTable extends Migration
       $table->string('email');
       $table->string('phone');
       $table->string('description');
+      $table->boolean('viewed')->default(false);
+      $table->string('cv')->nullable();
       $table->timestamps();
     });
   }

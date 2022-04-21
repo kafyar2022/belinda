@@ -12,7 +12,7 @@
         <a class="page-navigation__link {{ $route === 'dashboard.newslifestyle' || $route === 'newslifestyle.edit' ? 'current' : '' }}" href="{{ route('dashboard.newslifestyle') }}">Новости и образ жизни</a>
       </li>
       <li class="page-navigation__item">
-        <a class="page-navigation__link {{ $route === 'dashboard.carrier' ? 'current' : '' }}" href="{{ route('dashboard.carrier') }}">Карьера</a>
+        <a class="page-navigation__link {{ $route === 'dashboard.carrier' || $route === 'vacancies.show' || $route === 'application' ? 'current' : '' }}" href="{{ route('dashboard.carrier') }}">Карьера</a>
       </li>
     </ul>
 

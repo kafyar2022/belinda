@@ -34,6 +34,7 @@ Route::get('/products/{slug}', [ProductsController::class, 'show'])->name('produ
 
 Route::get('/carrier', [CarrierController::class, 'index'])->name('carrier.index');
 Route::get('/carrier/apply/{slug}', [CarrierController::class, 'apply'])->name('carrier.apply');
+Route::post('/apply', [CarrierController::class, 'insertApplication'])->name('apply');
 
 Route::get('/newslifestyle', [NewsLifestyleController::class, 'index'])->name('newslifestyle.index');
 Route::get('/newslifestyle/news', [NewsLifestyleController::class, 'news'])->name('newslifestyle.news');
@@ -66,9 +67,11 @@ Route::group(['middleware' => ['AuthCheck']], function () {
       Route::post('/newslifestyle-update', [NewsLifestyleController::class, 'update'])->name('newslifestyle.update');
 
       Route::get('/vacancies-edit/{id}', [CarrierController::class, 'edit'])->name('vacancies.edit');
-      Route::get('/vacancies-delete', [CarrierController::class, 'delete'])->name('vacancies.delete');
+      Route::get('/vacancies-activation/{id}', [CarrierController::class, 'activation'])->name('vacancies.activation');
       Route::post('/vacancies-store', [CarrierController::class, 'store'])->name('vacancies.store');
       Route::get('/vacancy/{id}', [CarrierController::class, 'show'])->name('vacancies.show');
+      Route::get('/application-download', [CarrierController::class, 'downloadApplication'])->name('application.download');
+      Route::get('/application/{id}', [CarrierController::class, 'application'])->name('application');
     });
   });
 });

@@ -1,23 +1,7 @@
 import { debounce } from '../util.js';
 
-const addFormShowEl = document.querySelector('.add-action');
-const addFormCloseEl = document.querySelector('.form__close');
-const addFormEl = document.querySelector('.vacancy-add-form');
 const searchFieldEl = document.querySelector('input[type="search"]');
 const productTitleEls = document.querySelectorAll('.data-list__title');
-
-function showAddForm() {
-  addFormEl.classList.remove('vacancy-add-form--hidden');
-  addFormCloseEl.addEventListener('click', hideAddForm);
-};
-
-function hideAddForm() {
-  addFormEl.classList.add('vacancy-add-form--hidden');
-  addFormCloseEl.removeEventListener('click', hideAddForm);
-};
-
-addFormShowEl.addEventListener('click', showAddForm);
-
 
 searchFieldEl.addEventListener('input', debounce((evt) => {
   const keyword = evt.target.value;

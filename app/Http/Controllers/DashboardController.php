@@ -29,7 +29,7 @@ class DashboardController extends Controller
 
   public function carrier()
   {
-    $data['vacancies'] = Vacancy::get();
+    $data['vacancies'] = Vacancy::latest()->get();
 
     return view('dashboard.pages.carrier.index', compact('data'));
   }

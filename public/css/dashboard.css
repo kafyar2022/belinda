@@ -414,3 +414,20 @@ input:focus+.form__label--file {
 .newslifestyle-add-form *:first-of-type {
   grid-row: 1/5;
 }
+
+/* vacancies add form */
+.vacancy-add-form {
+  max-height: 390px;
+  overflow: hidden;
+  visibility: visible;
+  transition: 0.3s;
+}
+
+.vacancy-add-form--hidden {
+  visibility: hidden;
+  max-height: 0;
+}
+
+.vacancy-add-form *:nth-of-type(2) {
+  grid-row: 2/5;
+}

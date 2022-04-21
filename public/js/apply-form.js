@@ -13,6 +13,6 @@ applyForm.addEventListener('submit', (evt) => {
   evt.preventDefault();
   const isValid = pristine.validate();
   if (isValid) {
-    console.log('valid');
+    evt.target.submit();
   }
 });

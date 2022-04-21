@@ -11,6 +11,13 @@
   padding: 0;
 }
 
+.success-msg {
+  display: flex;
+  margin: 0;
+  justify-content: center;
+  color: #36b336;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
