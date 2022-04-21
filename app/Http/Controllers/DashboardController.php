@@ -6,6 +6,7 @@ use App\Models\Classification;
 use App\Models\Newslifestyle;
 use App\Models\Nosology;
 use App\Models\Product;
+use App\Models\Vacancy;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -28,6 +29,8 @@ class DashboardController extends Controller
 
   public function carrier()
   {
-    return view('dashboard.pages.carrier.index');
+    $data['vacancies'] = Vacancy::get();
+
+    return view('dashboard.pages.carrier.index', compact('data'));
   }
 }

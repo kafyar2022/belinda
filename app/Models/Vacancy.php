@@ -13,6 +13,11 @@ class Vacancy extends Model
 
   protected $guarded = [];
 
+  public function applications()
+  {
+    return $this->hasMany(Application::class, 'vacancy_id');
+  }
+
   public function sluggable()
   {
     return [

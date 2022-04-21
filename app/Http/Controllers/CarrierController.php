@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\Helper;
+use App\Models\Application;
 use App\Models\Vacancy;
 use Illuminate\Http\Request;
 
@@ -21,5 +22,12 @@ class CarrierController extends Controller
     $vacancy = Vacancy::where('slug', $slug)->first();
 
     return view('pages.carrier.apply', compact('vacancy'));
+  }
+
+  public function show($id)
+  {
+    $vacancy = Vacancy::find($id);
+
+    return view('dashboard.pages.carrier.show', compact('vacancy'));
   }
 }

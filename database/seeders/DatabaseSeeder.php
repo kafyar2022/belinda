@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
       NosologySeeder::class,
       VacancySeeder::class,
       NewslifestyleSeeder::class,
+      ApplicationSeeder::class,
     ]);
   }
 }

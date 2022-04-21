@@ -64,6 +64,11 @@ Route::group(['middleware' => ['AuthCheck']], function () {
       Route::get('/newslifestyle-delete', [NewsLifestyleController::class, 'delete'])->name('newslifestyle.delete');
       Route::post('/newslifestyle-store', [NewsLifestyleController::class, 'store'])->name('newslifestyle.store');
       Route::post('/newslifestyle-update', [NewsLifestyleController::class, 'update'])->name('newslifestyle.update');
+
+      Route::get('/vacancies-edit/{id}', [CarrierController::class, 'edit'])->name('vacancies.edit');
+      Route::get('/vacancies-delete', [CarrierController::class, 'delete'])->name('vacancies.delete');
+      Route::post('/vacancies-store', [CarrierController::class, 'store'])->name('vacancies.store');
+      Route::get('/vacancy/{id}', [CarrierController::class, 'show'])->name('vacancies.show');
     });
   });
 });

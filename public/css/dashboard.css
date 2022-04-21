@@ -302,6 +302,7 @@ input:focus+.form__label--file {
 }
 
 .data-list__item {
+  position: relative;
   display: flex;
   counter-increment: count;
   background-color: #fff;
